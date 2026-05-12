@@ -132,6 +132,112 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Segoe UI',Arial,sa
   .lgd{bottom:8px;left:4px;max-width:55vw;max-height:30vh;font-size:8px}
   .lgd-chip{font-size:7px}
 }
+
+/* ── ALIADOS VIEW ─────────────────────────────────────────────────────────── */
+.aliados-wrap{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;background:#f5f7fa;display:none;padding:0}
+.aliados-wrap.active{display:block}
+
+/* Hero metodología */
+.met-hero{background:linear-gradient(135deg,#1F3864 0%,#00773A 100%);color:#fff;padding:28px 32px 24px}
+.met-hero h2{font-size:18px;font-weight:700;margin:0 0 6px}
+.met-hero p{font-size:12px;opacity:.9;margin:0;line-height:1.5;max-width:700px}
+.met-section{padding:20px 32px;border-bottom:1px solid #e0e6ee}
+.met-section h3{font-size:13px;font-weight:700;color:#1F3864;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.met-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.met-card{background:#fff;border-radius:8px;padding:12px 14px;border-left:4px solid #00773A;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.met-card .mc-label{font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:#888;margin-bottom:4px;font-weight:600}
+.met-card .mc-val{font-size:22px;font-weight:700;color:#1F3864;line-height:1}
+.met-card .mc-sub{font-size:10px;color:#555;margin-top:4px}
+.dim-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.dim-item{background:#fff;border-radius:7px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+.dim-item .di-name{font-size:10px;font-weight:700;color:#1F3864;margin-bottom:2px}
+.dim-item .di-peso{font-size:18px;font-weight:700;color:#00773A}
+.dim-item .di-desc{font-size:9px;color:#666;margin-top:3px;line-height:1.3}
+.dim-item.high .di-peso{color:#E74C3C}
+.score-scale{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.ss-item{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:600}
+.ss-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
+
+/* Ranking aliados */
+.rank-section{padding:20px 32px;border-bottom:1px solid #e0e6ee}
+.rank-section h3{font-size:13px;font-weight:700;color:#1F3864;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.ally-table-wrap{overflow-x:auto}
+.ally-table{width:100%;border-collapse:collapse;font-size:11px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.ally-table thead th{background:#1F3864;color:#fff;padding:10px 12px;text-align:left;font-size:10px;font-weight:600;cursor:pointer;user-select:none;white-space:nowrap}
+.ally-table thead th:hover{background:#2a5298}
+.ally-table thead th .arr{opacity:.5;font-size:9px;margin-left:3px}
+.ally-table tbody tr{border-bottom:1px solid #eef2f7;transition:background .12s;cursor:pointer}
+.ally-table tbody tr:hover{background:#f0f8f4}
+.ally-table tbody td{padding:10px 12px;vertical-align:middle}
+.ally-rank-num{width:32px;height:32px;border-radius:50%;background:#1F3864;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.ally-badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:600}
+.ally-alert-cell{font-size:9px;max-width:180px;line-height:1.3}
+.score-bar-wrap{display:flex;align-items:center;gap:6px}
+.score-bar{height:8px;border-radius:4px;flex:1;background:#eee;overflow:hidden;min-width:60px}
+.score-bar-fill{height:100%;border-radius:4px;transition:width .4s}
+.score-num{font-size:12px;font-weight:700;min-width:28px}
+
+/* Ally detail modal */
+.ally-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:8000;align-items:center;justify-content:center}
+.ally-modal-overlay.open{display:flex}
+.ally-modal{background:#fff;border-radius:12px;width:min(520px,92vw);max-height:88vh;overflow:hidden;display:flex;flex-direction:column;animation:popIn .18s ease-out;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.ally-modal-hd{padding:18px 20px 14px;color:#fff;display:flex;align-items:flex-start;gap:12px}
+.ally-modal-hd .am-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+.ally-modal-hd .am-title{flex:1}
+.ally-modal-hd .am-title h3{font-size:16px;font-weight:700;margin:0 0 3px}
+.ally-modal-hd .am-title small{font-size:10px;opacity:.85}
+.ally-modal-hd .am-close{background:rgba(255,255,255,.18);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:-2px}
+.ally-modal-hd .am-close:hover{background:rgba(255,255,255,.3)}
+.ally-modal-bd{padding:18px 20px;overflow-y:auto;flex:1}
+.am-row{margin-bottom:12px}
+.am-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:#888;font-weight:600;margin-bottom:3px}
+.am-val{font-size:12px;color:#222;line-height:1.5}
+.am-caps{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.am-cap{background:#e8f4f0;color:#00773A;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:600}
+.am-alert-box{background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:10px 12px;font-size:11px;color:#856404;margin-bottom:12px;line-height:1.4}
+.am-excl-box{background:#ffe0e0;border:1px solid #e74c3c;border-radius:6px;padding:10px 12px;font-size:11px;color:#c0392b;margin-bottom:12px;line-height:1.4}
+.am-vert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.am-vert-item{background:#f5f7fa;border-radius:5px;padding:6px 8px;text-align:center}
+.am-vert-item .av-name{font-size:8px;color:#666;margin-bottom:2px;line-height:1.2}
+.am-vert-item .av-score{font-size:16px;font-weight:700}
+
+/* Riesgos section */
+.riesgos-section{padding:20px 32px 32px}
+.riesgos-section h3{font-size:13px;font-weight:700;color:#1F3864;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.riesgo-card{background:#fff;border-radius:8px;margin-bottom:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.riesgo-card .rc-hd{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:11px;font-weight:600}
+.riesgo-card .rc-tipo{font-size:9px;padding:2px 7px;border-radius:10px;color:#fff;font-weight:600}
+.riesgo-card .rc-bd{padding:0 14px 10px;font-size:10px;color:#444;line-height:1.5}
+.riesgo-card .rc-mit{font-size:9px;color:#00773A;margin-top:5px;font-weight:600}
+
+/* Country political info modal */
+.country-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:9000;align-items:center;justify-content:center}
+.country-modal-overlay.open{display:flex}
+.country-modal{background:#fff;border-radius:12px;width:min(480px,92vw);max-height:88vh;overflow:hidden;display:flex;flex-direction:column;animation:popIn .18s ease-out;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.country-modal-hd{padding:16px 18px;color:#fff;display:flex;align-items:center;gap:10px}
+.country-modal-hd h3{flex:1;font-size:15px;font-weight:700;margin:0}
+.country-modal-hd .cm-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center}
+.country-modal-bd{padding:16px 18px;overflow-y:auto;flex:1}
+.cm-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.cm-kpi{background:#f5f7fa;border-radius:7px;padding:10px 10px 8px;text-align:center}
+.cm-kpi .ck-val{font-size:18px;font-weight:700;color:#1F3864}
+.cm-kpi .ck-lbl{font-size:8px;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.cm-row{display:flex;gap:6px;margin-bottom:8px;align-items:flex-start}
+.cm-row .cr-ico{font-size:14px;flex-shrink:0;margin-top:1px}
+.cm-row .cr-content .cr-lbl{font-size:8px;text-transform:uppercase;letter-spacing:.5px;color:#888;font-weight:600}
+.cm-row .cr-content .cr-val{font-size:11px;color:#222;line-height:1.4}
+.cm-ventana{background:linear-gradient(135deg,#1F3864,#00773A);color:#fff;border-radius:8px;padding:12px 14px;margin-top:10px}
+.cm-ventana .cv-lbl{font-size:9px;opacity:.8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.cm-ventana .cv-val{font-size:12px;font-weight:700;line-height:1.4}
+.cm-rec-tag{display:inline-block;margin-top:6px;font-size:10px;background:rgba(255,255,255,.2);padding:3px 8px;border-radius:10px}
+
+@media(max-width:700px){
+  .met-hero{padding:16px}
+  .met-section,.rank-section,.riesgos-section{padding:14px 12px}
+  .cm-kpi-row{grid-template-columns:repeat(2,1fr)}
+  .am-vert-grid{grid-template-columns:repeat(2,1fr)}
+}
+
 </style>
 </head>
 <body>
@@ -139,20 +245,20 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Segoe UI',Arial,sa
 <img src="data:image/png;base64,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sQ+t3IHr8R8VjEGx8Ee4VOn4rF2+t8siKU5Z6E+n+iywIwCDkH1QfJYfgqdLgey9EAQWlwOKOQnsRj9KwqyF3qRI4QxnLWnJI9SsegIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIKscWODmuIIOQQsxRVTZ24dgSAcj3+IWGVWOLHBzXEEHIIQbAit6KpbOzBwJB3Hv8QrhAREQFY3Cj68yxD63ctHr8fmr5EGvK4pq2aABoIcweh9Pkru4UfXmWJv1u5aPX4/NYxBkxdRjmHn/ANX+it6m4TzAtBDGnuB3P2q0RAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERBVjnMeHNJBHIIWYo6gTs9A8fjD/uFhl9Rvcx4exxBHYhBnkXhSVLZ2egeO4/7he6AePTKIgCAArK4UnWDLGPrf8QHr8fmr7sqEoNfRZOvo+sGWIfWHJA9f9VjEBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB9RvdG8PY4gjsQsvSVLahuOzwOR/3Cwyqx7mODmuII7EIM+g7rwoqps7Ok4EgHI9/iF7oKlUHdVKM9UH0FYXGi6syxN+t3LR6/FX6INcRZS40XWDLEPrdy0evxCxaAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgqx7mODmuII7ELMUVQ2cYOA8dx7/ABCwyqxzmPDmkgjkEINhIyF8g8rxoqptQzpOBIByPf4hXBAPzQUz8FUOHshb7FULT80H11A+qw1ziEdUcDAcOof91l8H2Kxl4P7+xvqG8/egsUREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERBVjnMeHNJBByCFmqCqbUM6TgSDuPf4hEQXSIiD5lkZDGZHnAAWAqZXTzulPGTwPYIiDzREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf//Z" class="hdr-logo" alt="Negocios Metro de Medellín"/>
 <div class="nav" id="navBtns">
 <button class="active" onclick="svC('all',this)">🌎 Regional</button>
-<button onclick="svC('peru',this)">Perú</button>
-<button onclick="svC('panama',this)">Panamá</button>
-<button onclick="svC('rd',this)">Rep.Dom.</button>
-<button onclick="svC('sv',this)">El Salvador</button>
-<button onclick="svC('cr',this)">Costa Rica</button>
-<button onclick="svC('ec',this)">Ecuador</button>
-<button onclick="svC('gt',this)">Guatemala</button>
-<button onclick="svC('mx',this)">México</button>
-<button onclick="svC('bo',this)">Bolivia</button>
-<button onclick="svC('cl',this)">Chile</button>
+<button onclick="svC('peru',this)">Perú <span onclick="event.stopPropagation();showCountryInfo('peru')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('panama',this)">Panamá <span onclick="event.stopPropagation();showCountryInfo('panama')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('rd',this)">Rep.Dom. <span onclick="event.stopPropagation();showCountryInfo('rd')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('sv',this)">El Salvador <span onclick="event.stopPropagation();showCountryInfo('sv')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('cr',this)">Costa Rica <span onclick="event.stopPropagation();showCountryInfo('cr')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('ec',this)">Ecuador <span onclick="event.stopPropagation();showCountryInfo('ec')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('gt',this)">Guatemala <span onclick="event.stopPropagation();showCountryInfo('gt')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('mx',this)">México <span onclick="event.stopPropagation();showCountryInfo('mx')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('bo',this)">Bolivia <span onclick="event.stopPropagation();showCountryInfo('bo')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
+<button onclick="svC('cl',this)">Chile <span onclick="event.stopPropagation();showCountryInfo('cl')" title="Info política" style="opacity:.6;font-size:9px;cursor:pointer">🏛</span></button>
 <button onclick="toggleSidebar()">☰</button>
 </div>
 </div>
-<div class="tabs" id="tabs"><button class="active" data-view="map" onclick="setView('map',this)">🗺️ Mapa</button><button data-view="table" onclick="setView('table',this)">📊 Tabla · Direccionamiento Estratégico</button></div>
+<div class="tabs" id="tabs"><button class="active" data-view="map" onclick="setView('map',this)">🗺️ Mapa</button><button data-view="table" onclick="setView('table',this)">📊 Tabla · D.E.</button><button data-view="aliados" onclick="setView('aliados',this)">🤝 Aliados Estratégicos</button></div>
 <div class="bar2" id="bar2">
 <span class="bar2-lab">Prioridad:</span>
 <button class="nav-prio active" onclick="svP('all',this)">Todas</button>
@@ -617,6 +723,534 @@ document.addEventListener('keydown', function(e){
 
 applyFilters();
 setTimeout(fixLayout,300);
+
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ALLIES DATA
+// ══════════════════════════════════════════════════════════════════════════════
+var ALLIES = [
+  {rank:1, name:"Transdev", clasif:"Ancla / Apertura de Mercado", score:4.20, paises:"R. Dominicana, Panamá, Chile, Perú, Guatemala", verticals:"Metro, Cable, O&M, Ferroviario", prioridad:"🔴 Crítica", alerta:null,
+   sede:"París, Francia", latam:"Alta (Colombia, México, Chile)", oqkr:"OQ3.2 / KR3.2.1 / KR3.2.3",
+   caps:["O&M Metro y Cable","TransMiCable Bogotá (renovado 2026)","exo Montreal (julio 2026)","Shadow Operator ferroviario"],
+   nota:"Operador global con presencia directa en LATAM. El aliado más completo para posicionar a Metro Medellín como operador en mercados nuevos. Ancla de los consorcios O&M.",
+   hdrColor:"#0066CC",
+   vertScores:{Metro:5,"Cable/Teleférico":5,"O&M":5,Ferroviario:4,PMO:3,Consultoría:3}},
+  {rank:2, name:"Ayesa", clasif:"Diferencial / Técnico", score:3.90, paises:"R. Dominicana, Panamá, Chile, Perú, México", verticals:"PMO, Consultoría, ORAT, Smart Mobility", prioridad:"🟠 Alta", alerta:null,
+   sede:"Sevilla, España (acq. por Colliers 2026)", latam:"Alta (consultoría LATAM)", oqkr:"KR3.3.3 / OQ3.3 / OQ3.2",
+   caps:["ORAT ferroviario (score 9.2/10)","PMO infraestructura compleja","Ibermática Smart Mobility","Ingeniería ferroviaria LATAM"],
+   nota:"Aporta la profundidad técnica que Metro Medellín necesita para ganar licitaciones de consultoría y PMO. Sin Ayesa, la propuesta técnica pierde solidez. Diferencial porque nadie más combina ORAT + PMO + Smart Mobility así.",
+   hdrColor:"#00773A",
+   vertScores:{Metro:4,"Cable/Teleférico":3,"O&M":3,Ferroviario:3,PMO:5,Consultoría:5}},
+  {rank:3, name:"Turner & Townsend", clasif:"Habilitador PMO", score:3.80, paises:"R. Dominicana, Panamá, Perú, Chile, México, Costa Rica", verticals:"PMO, Supervisión, Infraestructura", prioridad:"🟠 Alta", alerta:null,
+   sede:"Leeds, Reino Unido (CBRE Group)", latam:"Alta (infraestructura LATAM)", oqkr:"KR3.3.3 / OQ3.3",
+   caps:["PMO infraestructura compleja (score 9.6/10)","Gestión proyectos >$500M","Acceso financiero vía CBRE","Supervisión técnica internacional"],
+   nota:"El PMO más confiable del portafolio. Habilitador porque da estructura y credibilidad a los proyectos grandes. Sin T&T, los consorcios en licitaciones de infraestructura compleja son más débiles.",
+   hdrColor:"#1F4E79",
+   vertScores:{Metro:4,"Cable/Teleférico":3,"O&M":3,Ferroviario:4,PMO:5,Consultoría:4}},
+  {rank:4, name:"Renfe", clasif:"Ancla / Legitimidad Ferroviaria", score:3.70, paises:"Chile, Costa Rica, México, Perú", verticals:"Ferroviario, O&M, Larga distancia", prioridad:"🟠 Alta", alerta:null,
+   sede:"Madrid, España (subsidiaria internacional 2023)", latam:"Creciente (Tren Maya, EFE Chile)", oqkr:"OQ3.2 / KR3.2.3 / KR3.2.1",
+   caps:["Shadow Operator Tren Maya (activo)","MOU con EFE Chile","O&M ferroviario larga distancia","Subsidiaria internacional creada 2023"],
+   nota:"Único aliado con operaciones ferroviarias activas en LATAM. Abre puertas que Metro Medellín no puede abrir solo en el segmento ferroviario. Indispensable para Chile, Costa Rica y México.",
+   hdrColor:"#8B0000",
+   vertScores:{Metro:3,"Cable/Teleférico":2,"O&M":5,Ferroviario:5,PMO:3,Consultoría:3}},
+  {rank:5, name:"Inteckno", clasif:"Técnico Cable/Teleférico", score:3.50, paises:"R. Dominicana, Chile, Perú, Guatemala, Ecuador, Bolivia", verticals:"Cable / Teleférico", prioridad:"🟠 Alta (vertical cable)", alerta:null,
+   sede:"Buenos Aires, Argentina", latam:"Media (Argentina, Colombia)", oqkr:"KR3.2.1 (vertical cable)",
+   caps:["Patente argentina teleférico urbano","O&M sistemas cable aéreo","Ingeniería de cable especializada"],
+   nota:"Especialista único en cable. Complementa perfectamente a Metro Medellín (referente Metrocable). Para cualquier oportunidad de teleférico, Inteckno es el aliado técnico obligatorio.",
+   hdrColor:"#FF6600",
+   vertScores:{Metro:2,"Cable/Teleférico":5,"O&M":3,Ferroviario:2,PMO:2,Consultoría:3}},
+  {rank:6, name:"Grupo Ortiz", clasif:"Técnico / Habilitador APP", score:3.20, paises:"R. Dominicana, Perú, Panamá, Chile", verticals:"Infraestructura, APP, DOT/TOD", prioridad:"🟠 Alta", alerta:null,
+   sede:"Madrid, España", latam:"Media (proyectos infraestructura)", oqkr:"OQ3.1 / KR3.1.1",
+   caps:["Construcción infra ferroviaria","APP/PPP España y LATAM","DOT/TOD estaciones","Concesiones infraestructura"],
+   nota:"Aporta la capacidad constructiva y de APP que Metro Medellín no tiene internamente. Clave para las oportunidades de concesión grande (Metro Lima L3, Metro SD L3). No opera, construye y concesiona.",
+   hdrColor:"#2E4057",
+   vertScores:{Metro:3,"Cable/Teleférico":3,"O&M":2,Ferroviario:3,PMO:4,Consultoría:3}},
+  {rank:7, name:"CHEC", clasif:"Táctico ⚠️", score:2.40, paises:"Colombia (principalmente)", verticals:"Electromovilidad (limitado)", prioridad:"🟡 Media", alerta:"⚠️ Matriz EPC es CCCC (debarred BM 2009). Solo usar en proyectos SIN financiamiento multilateral (BM/BID/CAF).",
+   sede:"Manizales, Colombia", latam:"Baja", oqkr:"OQ3.2 (limitado)",
+   caps:["Energía / electromovilidad Colombia","O&M eléctrico"],
+   nota:"Aliado táctico con alcance muy limitado. Su mayor restricción es la alerta CCCC: si el proyecto tiene BM, BID o CAF, CHEC no puede participar. Útil solo en proyectos nacionales o regionales sin multilateral.",
+   hdrColor:"#7B5E00",
+   vertScores:{Metro:2,"Cable/Teleférico":2,"O&M":3,Ferroviario:2,PMO:2,Electromovilidad:4}},
+  {rank:8, name:"Fenoco", clasif:"Exploratorio Carga", score:2.00, paises:"Bolivia (exploratorio)", verticals:"Carga ferroviaria (Colombia)", prioridad:"⚪ Baja", alerta:null,
+   sede:"Bogotá, Colombia", latam:"Baja", oqkr:"KR3.2.1 (carga, limitado)",
+   caps:["Operación ferroviaria carga Colombia","Red ferroviaria nacional"],
+   nota:"Potencial a largo plazo en vertical de carga ferroviaria, pero sin proyección internacional comprobada. Exploratorio significa que hay que desarrollar la alianza antes de proponer proyectos conjuntos.",
+   hdrColor:"#555",
+   vertScores:{Metro:1,"Cable/Teleférico":1,"O&M":3,Ferroviario:4,PMO:2,Carga:5}},
+  {rank:9, name:"Nippon Koei LAC", clasif:"🚫 EXCLUIDO", score:1.00, paises:"N/A", verticals:"N/A", prioridad:"🚫 Excluida", alerta:"🚫 SANCIÓN WORLD BANK LAC — Marzo 2024 (falsificación de CVs y fraude en licitaciones). No elegible para ningún proyecto con financiamiento BM, BID o CAF. Riesgo reputacional crítico.",
+   sede:"Tokio / Bogotá", latam:"Alta (pero sancionada)", oqkr:"N/A",
+   caps:["EXCLUIDO — no usar"],
+   nota:"Excluir de todas las propuestas. La sanción del Banco Mundial de marzo 2024 por falsificación de hojas de vida en licitaciones hace que su inclusión en cualquier consorcio invalide la propuesta ante multilaterales.",
+   hdrColor:"#c0392b",
+   vertScores:{}},
+];
+
+var RIESGOS = [
+  {tipo:"🚫 Exclusión", color:"#e74c3c", titulo:"Nippon Koei LAC — Sanción World Bank activa", desc:"Sancionada por World Bank LAC en marzo 2024 por falsificación de CVs y fraude. No elegible en proyectos BM, BID, CAF. Incluirla invalida la propuesta.", mit:"Excluir definitivamente. No negociable."},
+  {tipo:"⚠️ Alerta Aliado", color:"#e67e22", titulo:"CHEC — Matriz EPC es CCCC (debarred BM 2009)", desc:"El contratista EPC de CHEC es China Communications Construction Company, inhabilitada por el Banco Mundial desde 2009. Riesgo de rechazo en proyectos con multilateral.", mit:"Usar CHEC solo en proyectos sin BM/BID/CAF. Verificar estructura EPC antes de cada propuesta."},
+  {tipo:"🏛️ Político", color:"#9b59b6", titulo:"Chile: elecciones noviembre 2025 — ventana pre-electoral", desc:"El gobierno Boric termina y la continuidad de la agenda ferroviaria EFE no está garantizada con el nuevo gobierno. El MOU con EFE puede quedar en suspenso.", mit:"Avanzar gestiones con EFE antes de las elecciones. Asegurar continuidad técnica independiente del resultado."},
+  {tipo:"🏛️ Político", color:"#9b59b6", titulo:"Ecuador: incertidumbre post-electoral 2025", desc:"La situación post-Noboa puede afectar el programa Metro Quito Fase 2 y los proyectos de movilidad. Riesgo de parálisis institucional durante transición.", mit:"Posponer activaciones en Ecuador hasta Q4 2025. Solo monitoreo pasivo hasta claridad política."},
+  {tipo:"🏛️ Político", color:"#9b59b6", titulo:"Bolivia: crisis política 2025 — baja viabilidad", desc:"La crisis política del gobierno Arce hace que Bolivia tenga la menor viabilidad institucional del portafolio. Los proyectos APP son inviables en este contexto.", mit:"Solo activar Bolivia desde 2027 si hay estabilización política. No invertir tiempo comercial ahora."},
+  {tipo:"💼 Estratégico", color:"#1F4E79", titulo:"Transdev opera: ¿cuál es el rol de Metro Medellín?", desc:"En oportunidades de O&M, Transdev es operador (mismo rol que Metro Medellín). Para estas oportunidades, Metro Medellín debe liderar la operación y Transdev puede ser socio minoritario técnico, no el operador principal.", mit:"Clarificar en cada propuesta quién lidera la operación. Metro Medellín opera; Ayesa, T&T y Ortiz soportan."},
+  {tipo:"💰 Financiero", color:"#e67e22", titulo:"APPs grandes requieren capital propio", desc:"Las APPs de metro ($300M–$5.000M USD) requieren capital o garantías que Metro Medellín puede no tener directamente. El riesgo financiero puede limitar el rol.", mit:"Rol recomendado en APPs: consultoría y O&M, no EPC ni inversor directo. Buscar socios financieros (IFC, CAF, CBRE)."},
+  {tipo:"📋 Supuesto", color:"#27ae60", titulo:"Ponderación aprobada por equipo GDN (JuanMa)", desc:"Pesos: Impacto D.E. 20%, Velocidad 20%, Fit 15%, Cap. Técnica 15%, Complementariedad 10%, Viabilidad País 10%, Cap. Apertura 5%, Riesgo 5%.", mit:"Actualizar pesos si cambian las prioridades del Direccionamiento Estratégico."},
+  {tipo:"ℹ️ Info faltante", color:"#888", titulo:"Sin costos de movilización ni modelo de negocio de aliados en LATAM", desc:"No se tienen las tarifas o estructuras de fee de los aliados para propuestas económicas. Los scores son cualitativos, no financieros.", mit:"Solicitar a cada aliado su modelo de negocio LATAM antes de estructurar propuesta formal."},
+];
+
+var COUNTRY_INFO = {
+  peru: {
+    name:"🇵🇪 Perú", hdrColor:"#8B0000",
+    kpis:[{val:"Alto", lbl:"Riesgo"},{val:"4/5", lbl:"Viabilidad"},{val:"5/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Dina Boluarte (2022–2026). Gobierno de continuidad post-Castillo. Estabilidad media — múltiples crisis de gabinete."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"Generales en abril 2026. Posible cambio de rumbo político. Riesgo de parálisis pre-electoral en H2 2025."},
+      {ico:"📐", lbl:"Madurez APP", val:"Alta. PROINVERSIÓN con experiencia y proceso G2G activo con Colombia. BM, BID y CAF con portafolio amplio."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID, Banco Mundial, CAF. G2G Colombia–Perú especialmente relevante para Metro Medellín."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Muy Alta. Lima con 159 oportunidades de movilidad activas. ATU como interlocutor central."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Inestabilidad política, corrupción sistémica, ciclos electorales frecuentes. Riesgo de suspensión de proyectos."},
+    ],
+    ventana:"Corto plazo (2025–2027). Mayor portafolio de oportunidades del análisis (28 proyectos). El G2G con Colombia es el mecanismo más conveniente.",
+    rec:"Prioridad #1 — acción inmediata en L3 Metro Lima, Teleférico Choquequirao y PMO ATU."
+  },
+  panama: {
+    name:"🇵🇦 Panamá", hdrColor:"#003087",
+    kpis:[{val:"Bajo", lbl:"Riesgo"},{val:"4/5", lbl:"Viabilidad"},{val:"4/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"José Raúl Mulino (2024–2029). 2do año de mandato. Gobierno pro-infraestructura con agenda clara de transporte."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"2029. Ventana de 4 años de estabilidad política. Sin presión electoral inmediata."},
+      {ico:"📐", lbl:"Madurez APP", val:"Alta. Metro de Panamá con contratos internacionales activos. BID presente con proyectos de electromovilidad."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID (electromovilidad MiBus aprobado), Banco Mundial, JICA (L3 Metro condiciona DOT)."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Alta. Línea 3 Metro en ejecución activa. Expansión planeada L4 y L5 en pipeline."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Corrupción histórica en contratos de infraestructura. Dependencia de decisiones de Metro de Panamá S.A."},
+    ],
+    ventana:"Corto plazo (2026–2027). L3 en ejecución genera PMO y preparación operacional urgente. Smart Mobility y DOT activos.",
+    rec:"Prioridad #2 — PMO L3, O&M Líneas 1-3 y Smart Mobility son las entradas más rápidas."
+  },
+  rd: {
+    name:"🇩🇴 República Dominicana", hdrColor:"#002D62",
+    kpis:[{val:"Bajo", lbl:"Riesgo"},{val:"5/5", lbl:"Viabilidad"},{val:"5/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Luis Abinader (2024–2028). Segundo mandato consecutivo. Gobierno pro-inversión, relación excelente con Colombia."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"2028. Cuatro años de ventana estable. Abinader reelegido con amplia mayoría — continuidad garantizada."},
+      {ico:"📐", lbl:"Madurez APP", val:"Alta. FITRAM y nueva EMT activas. BID, BM y CAF con portafolio en movilidad urbana."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID, Banco Mundial, CAF. Relación bilateral Colombia–RD muy activa para cooperación técnica."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Muy Alta. Transición OPRET→EMT en curso. Monorriel Santiago activo, L2C con problemas técnicos urgentes."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Capacidad institucional en construcción (EMT nueva). Riesgo de dependencia política en toma de decisiones."},
+    ],
+    ventana:"Inmediata (2026). País #1 del análisis. Coyuntura irrepetible: EMT naciendo, teleféricos en marcha blanca, monorriel activo.",
+    rec:"Prioridad #1 — Acción esta semana: Cultura Metro, auditoría L2C, Shadow Operator teleférico, transición EMT."
+  },
+  sv: {
+    name:"🇸🇻 El Salvador", hdrColor:"#0F47AF",
+    kpis:[{val:"Medio", lbl:"Riesgo"},{val:"3/5", lbl:"Viabilidad"},{val:"3/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Nayib Bukele (2024–2029). Segundo mandato. Alta concentración de poder en ejecutivo. Estabilidad política alta pero democrática limitada."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"2029. Sin presión electoral. Bukele controla legislativo y ejecutivo — decisiones rápidas pero sin contrapeso."},
+      {ico:"📐", lbl:"Madurez APP", val:"Baja-Media. Estructuras APP incipientes. BID y BCIE más activos que BM en transporte."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID (ES-L1164 movilidad $60M aprobado, ES-T1371 asistencia técnica activa), BCIE."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Media. Metrocable L1 en construcción (Mejicanos). 1.500 buses Yutong llegando. Alta urgencia técnica operativa."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Concentración de poder puede generar decisiones abruptas. Riesgo reputacional por asociación con régimen Bukele."},
+    ],
+    ventana:"Corto plazo selectivo (2026–2027). Enfocarse en asistencia técnica puntual: metrocable, gestión flota buses, BID activo.",
+    rec:"Selectivo — Metrocable L1 y gestión flota Yutong son entradas seguras. Evitar compromisos políticos de largo plazo."
+  },
+  cr: {
+    name:"🇨🇷 Costa Rica", hdrColor:"#003DA5",
+    kpis:[{val:"Bajo", lbl:"Riesgo"},{val:"3/5", lbl:"Viabilidad"},{val:"4/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Rodrigo Chaves (2022–2026). Gobierno con agenda de infraestructura activa. Estabilidad institucional alta — democracia sólida."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"Febrero 2026. Posible cambio de gobierno. Riesgo de parálisis en proyectos grandes H2 2025."},
+      {ico:"📐", lbl:"Madurez APP", val:"Media. INCOFER con capacidad limitada. BID y BCIE con financiamiento activo para TEM."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID (TEM financiado), BCIE (transporte urbano). Alta transparencia en contratación."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Alta. Tren Eléctrico Metropolitano (TEM) es el proyecto ancla — PMO urgente."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Elecciones 2026 pueden cambiar prioridades TEM. Capacidad presupuestal del gobierno limitada."},
+    ],
+    ventana:"Corto-Mediano plazo (2026–2028). TEM es la puerta de entrada. Shadow Operator INCOFER es el quick win más visible.",
+    rec:"Prioridad #3 — Activar MOU con Renfe para TEM urgente antes de elecciones 2026."
+  },
+  ec: {
+    name:"🇪🇨 Ecuador", hdrColor:"#FFD700",
+    kpis:[{val:"Medio", lbl:"Riesgo"},{val:"3/5", lbl:"Viabilidad"},{val:"3/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Daniel Noboa (hasta mayo 2025). Proceso electoral 2025 en curso. Incertidumbre sobre continuidad de agenda movilidad."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"Elecciones presidenciales 2025. Alta incertidumbre sobre resultado y continuidad de políticas."},
+      {ico:"📐", lbl:"Madurez APP", val:"Media. Metro Quito como referente, pero marco APP en desarrollo. CAF y BID activos."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"CAF (principal), BID. Metro Quito financiado parcialmente por CAF y BEI."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Media. Metro Quito Fase 2 y extensiones pendientes de decisión política post-electoral."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Inestabilidad política post-electoral. Riesgo de parálisis en Metro Quito si nuevo gobierno reconfigura prioridades."},
+    ],
+    ventana:"Post-elecciones 2025. Monitorear resultado electoral antes de activar. No invertir tiempo comercial hasta Q4 2025.",
+    rec:"Monitorear — Esperar resultado electoral. Metro Quito Fase 2 puede ser la entrada si hay gobierno favorable."
+  },
+  gt: {
+    name:"🇬🇹 Guatemala", hdrColor:"#009F6B",
+    kpis:[{val:"Medio", lbl:"Riesgo"},{val:"4/5", lbl:"Viabilidad"},{val:"4/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Bernardo Arévalo (2024–2028). Gobierno reformista, primer año. Relaciones con Colombia excelentes. Agenda anti-corrupción activa."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"2028. Cuatro años de ventana. Arévalo con agenda de movilidad sostenible explícita."},
+      {ico:"📐", lbl:"Madurez APP", val:"Media. Transmetro operando. BID y Banco Mundial con programas activos de transporte urbano."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID (transporte urbano activo), Banco Mundial. BCIE en infraestructura menor."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Alta. Cable car Guatemala Ciudad como proyecto estrella. Transmetro Fase 3 en estructuración."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Resistencia del establishment político. Riesgo de bloqueo institucional al gobierno Arévalo. Procesos lentos."},
+    ],
+    ventana:"Inmediata (2026). Gobierno nuevo y favorable. Cable Guatemala Ciudad es el quick win más urgente y de mayor visibilidad.",
+    rec:"Prioridad #2 — Cable Guatemala Ciudad con Inteckno es la propuesta más urgente. Ventana abierta ya."
+  },
+  mx: {
+    name:"🇲🇽 México", hdrColor:"#006847",
+    kpis:[{val:"Medio", lbl:"Riesgo"},{val:"3/5", lbl:"Viabilidad"},{val:"4/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Claudia Sheinbaum (2024–2030). Primera presidenta mujer. Continuidad de agenda AMLO en infraestructura. Énfasis en Tren Maya."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"2030. Seis años de ventana. Sheinbaum con mayoría legislativa — decisiones rápidas posibles."},
+      {ico:"📐", lbl:"Madurez APP", val:"Media-Alta. Mecanismos APP establecidos pero gobierno Sheinbaum prefiere inversión pública directa."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID (transporte urbano). México tiene capacidad de autofinanciamiento — multilaterales menos determinantes."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Media-Alta. Tren Maya operando, Tren Interoceánico en marcha. STC Metro CDMX en crisis operativa."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Preferencia por proveedores nacionales o alianzas G2G. Riesgo de politización de contratos. STC CDMX sensible."},
+    ],
+    ventana:"2026–2027. La entrada recomendada es vía Renfe (ya tiene relación con Tren Maya). Consultoría STC CDMX es oportunidad directa.",
+    rec:"Prioridad #3 — Activar vía Renfe para Tren Maya. Proponer consultoría STC Metro CDMX directamente."
+  },
+  bo: {
+    name:"🇧🇴 Bolivia", hdrColor:"#2C0000",
+    kpis:[{val:"Alto", lbl:"Riesgo"},{val:"2/5", lbl:"Viabilidad"},{val:"3/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Luis Arce (2020–2025). Crisis política severa en 2025. Enfrentamiento MAS-Arce vs. MAS-Morales. Estabilidad muy baja."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"Generales 2025. Resultado incierto. Alta probabilidad de crisis post-electoral."},
+      {ico:"📐", lbl:"Madurez APP", val:"Baja. Gobierno históricamente estatista. Poco espacio para APP en transporte. CAF es el único multilateral relevante."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"Solo CAF con alguna actividad. BM y BID con presencia muy limitada en Bolivia."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Media. Mi Teleférico operando (referente mundial), pero expansión depende de estabilidad política y fiscal."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Crisis política activa, inestabilidad fiscal, estatismo extremo, dificultades de pago. El país de mayor riesgo del portafolio."},
+    ],
+    ventana:"Expectante (2027+). No activar hasta estabilización política. Mi Teleférico puede ser puerta si hay nuevo gobierno favorable.",
+    rec:"Esperar — Bolivia solo se activa post-2027 con nuevo gobierno estable. Solo monitoreo pasivo ahora."
+  },
+  cl: {
+    name:"🇨🇱 Chile", hdrColor:"#D52B1E",
+    kpis:[{val:"Bajo", lbl:"Riesgo"},{val:"5/5", lbl:"Viabilidad"},{val:"5/5", lbl:"Atractividad"}],
+    rows:[
+      {ico:"🏛️", lbl:"Gobierno actual", val:"Gabriel Boric (2022–2026). Gobierno de centroizquierda. EFE con agenda ferroviaria activa. Relación bilateral con Colombia muy buena."},
+      {ico:"🗳️", lbl:"Próximas elecciones", val:"Noviembre 2025. Riesgo de cambio de gobierno. La agenda EFE puede quedar en suspenso. Ventana pre-electoral urgente."},
+      {ico:"📐", lbl:"Madurez APP", val:"Muy Alta. Chile tiene el marco APP más maduro de América Latina. Experiencia en concesiones ferroviarias y metro."},
+      {ico:"🏦", lbl:"Multilaterales activos", val:"BID, Banco Mundial, CAF. Chile también autofinancia grandes proyectos (Metro Santiago con fondos propios)."},
+      {ico:"🚇", lbl:"Prioridad movilidad", val:"Muy Alta. EFE con expansión activa. Metro Santiago en extensiones L7 y L8. Tren Central en estructuración."},
+      {ico:"⚠️", lbl:"Riesgos clave", val:"Elecciones noviembre 2025 — riesgo de pausa post-electoral. Competencia intensa de operadores europeos (Alstom, RATP Dev)."},
+    ],
+    ventana:"Inmediata y continua. MOU Metro Medellín–EFE Chile es el activo más valioso. Activar ANTES de las elecciones de noviembre 2025.",
+    rec:"Prioridad #1 — Formalizar MOU EFE urgente. Consultoría Metro Santiago L7/L8 es quick win inmediato con Ayesa."
+  }
+};
+
+// ══ ALLY TABLE ════════════════════════════════════════════════════════════════
+var allySort = {key:'rank', dir:1};
+
+function scoreColor(s){
+  if(s >= 4.0) return '#27ae60';
+  if(s >= 3.5) return '#2ecc71';
+  if(s >= 3.0) return '#f1c40f';
+  if(s >= 2.0) return '#e67e22';
+  return '#e74c3c';
+}
+
+function renderAllyTable(){
+  var arr = ALLIES.slice();
+  arr.sort(function(a,b){
+    var va = a[allySort.key], vb = b[allySort.key];
+    if(typeof va === 'string') return va.localeCompare(vb)*allySort.dir;
+    return (va - vb)*allySort.dir;
+  });
+  var tb = document.getElementById('allyTBody');
+  if(!tb) return;
+  tb.innerHTML = '';
+  arr.forEach(function(a){
+    var sc = a.score;
+    var isExcl = a.clasif.indexOf('EXCLUIDO') >= 0;
+    var hasAlert = !!a.alerta && !isExcl;
+    var rowBg = isExcl ? '#ffe0e0' : (hasAlert ? '#fff8e1' : '');
+    var badgeColor = isExcl ? '#e74c3c' : (a.prioridad.indexOf('Crítica') >= 0 ? '#e74c3c' : (a.prioridad.indexOf('Alta') >= 0 ? '#e67e22' : (a.prioridad.indexOf('Media') >= 0 ? '#f1c40f' : '#95a5a6')));
+    var badgeTxt = isExcl ? '#fff' : (a.prioridad.indexOf('Media') >= 0 ? '#333' : '#fff');
+    var tr = document.createElement('tr');
+    tr.style.background = rowBg;
+    tr.onclick = function(){ openAllyModal(a); };
+    tr.innerHTML =
+      '<td><div class="ally-rank-num" style="background:'+(isExcl?'#e74c3c':'#1F3864')+'">'+a.rank+'</div></td>'+
+      '<td><strong>'+a.name+'</strong><br><span style="font-size:9px;color:#888">'+a.sede+'</span></td>'+
+      '<td><span style="font-size:10px;color:#555">'+a.clasif+'</span></td>'+
+      '<td><div class="score-bar-wrap"><div class="score-bar"><div class="score-bar-fill" style="width:'+(sc/5*100)+'%;background:'+scoreColor(sc)+'"></div></div><span class="score-num" style="color:'+scoreColor(sc)+'">'+sc.toFixed(2)+'</span></div></td>'+
+      '<td style="font-size:10px">'+a.paises+'</td>'+
+      '<td style="font-size:10px">'+a.verticals+'</td>'+
+      '<td><span class="ally-badge" style="background:'+badgeColor+';color:'+badgeTxt+'">'+a.prioridad+'</span></td>'+
+      '<td class="ally-alert-cell">'+(a.alerta ? a.alerta : '<span style="color:#27ae60;font-size:11px">✓ Sin alerta</span>')+'</td>';
+    tb.appendChild(tr);
+  });
+  // update header arrows
+  document.querySelectorAll('.ally-table thead th .arr').forEach(function(el,i){
+    var keys = ['rank','name','clasif','score','paises','verticals','prioridad',''];
+    var k = keys[i];
+    if(k && k === allySort.key) el.textContent = allySort.dir===1?'↑':'↓';
+    else el.textContent = '↕';
+  });
+}
+
+function sortAllyTable(key){
+  if(allySort.key===key) allySort.dir = -allySort.dir;
+  else { allySort.key=key; allySort.dir=1; }
+  renderAllyTable();
+}
+
+// ══ ALLY MODAL ════════════════════════════════════════════════════════════════
+function openAllyModal(a){
+  var isExcl = a.clasif.indexOf('EXCLUIDO') >= 0;
+  var hasAlert = !!a.alerta && !isExcl;
+  document.getElementById('amHd').style.background = a.hdrColor;
+  document.getElementById('amIcon').textContent = isExcl ? '🚫' : (a.clasif.indexOf('Ancla') >= 0 ? '⚓' : (a.clasif.indexOf('Técnico') >= 0 ? '🔧' : (a.clasif.indexOf('Habilitador') >= 0 ? '⚙️' : (a.clasif.indexOf('Táctico') >= 0 ? '⚠️' : '🏢'))));
+  document.getElementById('amName').textContent = a.name;
+  document.getElementById('amType').textContent = a.clasif + ' · ' + a.sede;
+  
+  var html = '';
+  if(isExcl){
+    html += '<div class="am-excl-box">'+a.alerta+'</div>';
+  } else if(hasAlert){
+    html += '<div class="am-alert-box">'+a.alerta+'</div>';
+  }
+  
+  html += '<div class="am-row"><div class="am-lbl">¿Por qué es importante este aliado?</div><div class="am-val">'+a.nota+'</div></div>';
+  html += '<div class="am-row"><div class="am-lbl">Sede y presencia LATAM</div><div class="am-val">'+a.sede+' · Presencia LATAM: '+a.latam+'</div></div>';
+  html += '<div class="am-row"><div class="am-lbl">OQ / KR que activa</div><div class="am-val" style="font-family:monospace;color:#1F4E79;font-weight:700">'+a.oqkr+'</div></div>';
+  html += '<div class="am-row"><div class="am-lbl">Capacidades clave</div><div class="am-caps">'+a.caps.map(function(c){return '<span class="am-cap">'+c+'</span>'}).join('')+'</div></div>';
+  
+  if(!isExcl && Object.keys(a.vertScores).length > 0){
+    html += '<div class="am-row"><div class="am-lbl">Fuerza por vertical (1–5)</div><div class="am-vert-grid">';
+    Object.keys(a.vertScores).forEach(function(v){
+      var s = a.vertScores[v];
+      var c = scoreColor(s);
+      html += '<div class="am-vert-item"><div class="av-name">'+v+'</div><div class="av-score" style="color:'+c+'">'+s+'</div></div>';
+    });
+    html += '</div></div>';
+  }
+  
+  html += '<div class="am-row"><div class="am-lbl">Países prioritarios</div><div class="am-val">'+a.paises+'</div></div>';
+  html += '<div class="am-row"><div class="am-lbl">Prioridad GDN</div><div class="am-val" style="font-weight:700">'+a.prioridad+'</div></div>';
+  
+  document.getElementById('amBody').innerHTML = html;
+  document.getElementById('allyModalOverlay').classList.add('open');
+}
+
+function closeAllyModal(e){
+  if(e && e.target && e.target.id !== 'allyModalOverlay') return;
+  document.getElementById('allyModalOverlay').classList.remove('open');
+}
+
+// ══ COUNTRY POLITICAL INFO ════════════════════════════════════════════════════
+function showCountryInfo(key){
+  var c = COUNTRY_INFO[key];
+  if(!c) return;
+  document.getElementById('cmHd').style.background = c.hdrColor;
+  document.getElementById('cmTitle').textContent = c.name + ' — Contexto Político-Institucional';
+  
+  var kpiHtml = '<div class="cm-kpi-row">' + c.kpis.map(function(k){
+    return '<div class="cm-kpi"><div class="ck-val">'+k.val+'</div><div class="ck-lbl">'+k.lbl+'</div></div>';
+  }).join('') + '</div>';
+  
+  var rowsHtml = c.rows.map(function(r){
+    return '<div class="cm-row"><div class="cr-ico">'+r.ico+'</div><div class="cr-content"><div class="cr-lbl">'+r.lbl+'</div><div class="cr-val">'+r.val+'</div></div></div>';
+  }).join('');
+  
+  var ventanaHtml = '<div class="cm-ventana"><div class="cv-lbl">Ventana estratégica GDN</div><div class="cv-val">'+c.ventana+'</div><div class="cm-rec-tag">'+c.rec+'</div></div>';
+  
+  document.getElementById('cmBody').innerHTML = kpiHtml + rowsHtml + ventanaHtml;
+  document.getElementById('countryModalOverlay').classList.add('open');
+}
+
+function closeCountryModal(e){
+  if(e && e.target && e.target.id !== 'countryModalOverlay') return;
+  document.getElementById('countryModalOverlay').classList.remove('open');
+}
+
+// ══ RIESGOS RENDER ═══════════════════════════════════════════════════════════
+function renderRiesgos(){
+  var el = document.getElementById('riesgosList');
+  if(!el) return;
+  el.innerHTML = RIESGOS.map(function(r){
+    return '<div class="riesgo-card">'+
+      '<div class="rc-hd"><span class="rc-tipo" style="background:'+r.color+'">'+r.tipo+'</span><strong style="font-size:11px">'+r.titulo+'</strong></div>'+
+      '<div class="rc-bd">'+r.desc+'<div class="rc-mit">✅ Mitigación: '+r.mit+'</div></div>'+
+      '</div>';
+  }).join('');
+}
+
+// ══ PATCH setView ═════════════════════════════════════════════════════════════
+var __origSetView = setView;
+setView = function(v, el){
+  var alidosWrap = document.getElementById('alidosWrap');
+  if(v === 'aliados'){
+    currentView = 'aliados';
+    document.querySelectorAll('.tabs button').forEach(function(b){b.classList.remove('active')});
+    if(el) el.classList.add('active');
+    document.getElementById('mapWrap').style.display = 'none';
+    document.getElementById('tblWrap').style.display = 'none';
+    document.getElementById('tblWrap').classList.remove('active');
+    alidosWrap.classList.add('active');
+    renderAllyTable();
+    renderRiesgos();
+  } else {
+    alidosWrap.classList.remove('active');
+    __origSetView(v, el);
+  }
+};
+
+// ══ ESC key for new modals ════════════════════════════════════════════════════
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    document.getElementById('allyModalOverlay').classList.remove('open');
+    document.getElementById('countryModalOverlay').classList.remove('open');
+  }
+});
+
 </script>
+
+<!-- ══ ALLY DETAIL MODAL ══════════════════════════════════════════════════════ -->
+<div id="allyModalOverlay" class="ally-modal-overlay" onclick="closeAllyModal(event)">
+  <div class="ally-modal" onclick="event.stopPropagation()">
+    <div id="amHd" class="ally-modal-hd" style="background:#1F3864">
+      <div class="am-icon" id="amIcon">🏢</div>
+      <div class="am-title">
+        <h3 id="amName">—</h3>
+        <small id="amType">—</small>
+      </div>
+      <button class="am-close" onclick="closeAllyModal()">×</button>
+    </div>
+    <div class="ally-modal-bd" id="amBody"></div>
+  </div>
+</div>
+
+<!-- ══ COUNTRY POLITICAL INFO MODAL ═══════════════════════════════════════════ -->
+<div id="countryModalOverlay" class="country-modal-overlay" onclick="closeCountryModal(event)">
+  <div class="country-modal" onclick="event.stopPropagation()">
+    <div id="cmHd" class="country-modal-hd" style="background:#1F3864">
+      <h3 id="cmTitle">—</h3>
+      <button class="cm-close" onclick="closeCountryModal()">×</button>
+    </div>
+    <div class="country-modal-bd" id="cmBody"></div>
+  </div>
+</div>
+
+<!-- ══ ALIADOS VIEW ════════════════════════════════════════════════════════════ -->
+<div id="alidosWrap" class="aliados-wrap" style="top:116px">
+
+  <!-- HERO METODOLOGÍA -->
+  <div class="met-hero">
+    <h2>🤝 Matriz Estratégica de Aliados — GDN Metro de Medellín</h2>
+    <p>Herramienta de priorización ejecutiva que cruza cuatro dimensiones: <strong>Direccionamiento Estratégico × Oportunidades Internacionales × Capacidades de Aliados × Viabilidad País</strong>. Cada aliado es evaluado por su capacidad real de ayudar a GDN a cumplir sus OQ y KR, no solo por su tamaño o reputación.</p>
+  </div>
+
+  <!-- MÉTRICAS GENERALES -->
+  <div class="met-section">
+    <h3>📊 Resumen del análisis</h3>
+    <div class="met-grid">
+      <div class="met-card"><div class="mc-label">Aliados evaluados</div><div class="mc-val">9</div><div class="mc-sub">Incluye 1 excluido y 1 con alerta</div></div>
+      <div class="met-card"><div class="mc-label">Oportunidades analizadas</div><div class="mc-val">60</div><div class="mc-sub">Priorizadas de 159 (P1/P2 + aliado viable)</div></div>
+      <div class="met-card"><div class="mc-label">Combinaciones evaluadas</div><div class="mc-val">134</div><div class="mc-sub">País × Oportunidad × Aliado</div></div>
+      <div class="met-card"><div class="mc-label">Países cubiertos</div><div class="mc-val">10</div><div class="mc-sub">LatAm prioritario para GDN</div></div>
+    </div>
+  </div>
+
+
+  <!-- CRITERIOS DE ASIGNACIÓN ALIADO-OPORTUNIDAD -->
+  <div class="met-section">
+    <h3>🔍 ¿Por qué 60 oportunidades y no las 159? — Criterio de selección</h3>
+    <p style="font-size:11px;color:#444;margin-bottom:14px;line-height:1.7">
+      El portafolio completo tiene <strong>159 oportunidades</strong> identificadas en el mapa. Incluir todas en la matriz habría generado más de <strong>1.400 filas</strong> (159 × 9 aliados), inmanejables para la toma de decisiones.<br><br>
+      Se filtraron las <strong>60 de mayor prioridad estratégica</strong>: aquellas clasificadas como <strong>P1 o P2</strong> en el direccionamiento y para las cuales existe al menos un aliado con perfil técnico claro. Las 99 restantes son de horizonte largo (P3), sin aliado viable identificado, o de contexto país desfavorable hoy. Pueden incorporarse en una versión 2.
+    </p>
+
+    <h3 style="margin-top:18px">🔗 ¿Con qué criterio se asignó cada aliado a cada oportunidad?</h3>
+    <p style="font-size:11px;color:#666;margin-bottom:14px;line-height:1.6">Tres criterios combinados, aplicados en este orden:</p>
+
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:4px">
+
+      <div style="background:#f0f4ff;border-left:4px solid #1F3864;border-radius:6px;padding:14px 16px">
+        <div style="font-size:12px;font-weight:700;color:#1F3864;margin-bottom:6px">① Vertical de la oportunidad vs. fortaleza del aliado</div>
+        <p style="font-size:11px;color:#444;margin:0;line-height:1.7">
+          Cada aliado tiene un perfil de qué tan fuerte es en cada vertical (Metro, Cable, Ferroviario, PMO, Consultoría) en escala <strong>1–5</strong>. Un aliado solo entra a una oportunidad si su score en esa vertical es <strong>3 o superior</strong>.<br>
+          <span style="color:#555;font-style:italic">Ej: Inteckno tiene 5/5 en cable → va a todas las oportunidades de teleférico. Renfe tiene 5/5 en ferroviario → va a todo lo de trenes. Ningún aliado entra a una vertical donde su score es 1 o 2.</span>
+        </p>
+      </div>
+
+      <div style="background:#f0f7f0;border-left:4px solid #27ae60;border-radius:6px;padding:14px 16px">
+        <div style="font-size:12px;font-weight:700;color:#1a6b3a;margin-bottom:6px">② Lo que dicen los archivos de Deep Research</div>
+        <p style="font-size:11px;color:#444;margin:0;line-height:1.7">
+          Los documentos analizados ya sugerían combinaciones específicas por ecosistema. Esas recomendaciones se usaron como punto de partida y se respetaron como hipótesis de consorcio.<br>
+          <span style="color:#555;font-style:italic">Ej: El ecosistema recomendado para teleféricos era Inteckno + Ayesa + Transdev. El ecosistema ferroviario era Renfe + Transdev. El de PMO era Turner & Townsend + Ayesa.</span>
+        </p>
+      </div>
+
+      <div style="background:#fff8ee;border-left:4px solid #e67e22;border-radius:6px;padding:14px 16px">
+        <div style="font-size:12px;font-weight:700;color:#a04a00;margin-bottom:6px">③ Sentido estratégico de la combinación como consorcio</div>
+        <p style="font-size:11px;color:#444;margin:0;line-height:1.7">
+          Más allá del fit técnico: ¿la combinación tiene lógica como propuesta conjunta? Una APP grande necesita a alguien que construya, alguien que opere y alguien que haga ingeniería. Una consultoría simple puede resolverla un solo aliado.<br>
+          <span style="color:#555;font-style:italic">Ej: Metro Lima L3 (APP grande) → Ortiz (construcción) + Transdev (operación) + Ayesa (ingeniería). Consultoría OPRET → Turner &amp; Townsend solo.</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- METODOLOGÍA -->
+  <div class="met-section">
+    <h3>⚙️ ¿Cómo se calcula el score? — Metodología en 3 pasos</h3>
+    <p style="font-size:11px;color:#444;margin-bottom:16px;line-height:1.6">
+      <strong>Paso 1:</strong> Cada combinación País + Oportunidad + Aliado recibe una nota de <strong>1 a 5</strong> en 8 dimensiones.<br>
+      <strong>Paso 2:</strong> Esas notas se multiplican por el peso de cada dimensión (no todas valen igual).<br>
+      <strong>Paso 3:</strong> Se suman y se obtiene el <strong>Score Total</strong>. Mientras más alto, más urgente es activar esa combinación.
+    </p>
+    <div class="dim-grid">
+      <div class="dim-item high"><div class="di-name">🎯 Impacto D.E.</div><div class="di-peso">20%</div><div class="di-desc">¿Cuánto aporta a los OQ y KR del Direccionamiento Estratégico?</div></div>
+      <div class="dim-item high"><div class="di-name">⚡ Velocidad de Activación</div><div class="di-peso">20%</div><div class="di-desc">¿Qué tan rápido se puede concretar una acción? (2026 = 5, 2030 = 1)</div></div>
+      <div class="dim-item"><div class="di-name">🔗 Fit Oportunidad</div><div class="di-peso">15%</div><div class="di-desc">¿Qué tan bien encaja el aliado con esa oportunidad específica?</div></div>
+      <div class="dim-item"><div class="di-name">🔧 Capacidad Técnica</div><div class="di-peso">15%</div><div class="di-desc">¿Tiene experiencia real para ejecutar o habilitar?</div></div>
+      <div class="dim-item"><div class="di-name">🤝 Complementariedad</div><div class="di-peso">10%</div><div class="di-desc">¿Complementa lo que ya tiene Metro Medellín?</div></div>
+      <div class="dim-item"><div class="di-name">🏛️ Viabilidad País</div><div class="di-peso">10%</div><div class="di-desc">¿El contexto político-institucional del país es favorable?</div></div>
+      <div class="dim-item"><div class="di-name">🚪 Capacidad de Apertura</div><div class="di-peso">5%</div><div class="di-desc">¿Puede abrir mercado o generar legitimidad institucional?</div></div>
+      <div class="dim-item"><div class="di-name">⚠️ Riesgo</div><div class="di-peso">5%</div><div class="di-desc">Riesgo reputacional, político y técnico. Score 5 = bajo riesgo.</div></div>
+    </div>
+    <div class="score-scale">
+      <div class="ss-item"><div class="ss-dot" style="background:#e74c3c">1</div><span>Muy bajo / alto riesgo</span></div>
+      <div class="ss-item"><div class="ss-dot" style="background:#e67e22">2</div><span>Aporte limitado</span></div>
+      <div class="ss-item"><div class="ss-dot" style="background:#f1c40f;color:#333">3</div><span>Viable con condiciones</span></div>
+      <div class="ss-item"><div class="ss-dot" style="background:#27ae60">4</div><span>Alto aporte estratégico</span></div>
+      <div class="ss-item"><div class="ss-dot" style="background:#1a8a4a">5</div><span>Crítico / transformacional</span></div>
+    </div>
+  </div>
+
+  <!-- RANKING DE ALIADOS -->
+  <div class="rank-section">
+    <h3>🏆 Ranking de Aliados <span style="font-size:10px;font-weight:400;color:#888">— Clic en cualquier fila para ver el perfil completo</span></h3>
+    <div class="ally-table-wrap">
+      <table class="ally-table" id="allyTable">
+        <thead>
+          <tr>
+            <th onclick="sortAllyTable('rank')"># <span class="arr">↑</span></th>
+            <th onclick="sortAllyTable('name')">Aliado <span class="arr">↕</span></th>
+            <th onclick="sortAllyTable('clasif')">Clasificación <span class="arr">↕</span></th>
+            <th onclick="sortAllyTable('score')">Score Promedio <span class="arr">↕</span></th>
+            <th onclick="sortAllyTable('paises')">Países Clave <span class="arr">↕</span></th>
+            <th onclick="sortAllyTable('verticals')">Verticales Fuertes <span class="arr">↕</span></th>
+            <th onclick="sortAllyTable('prioridad')">Prioridad GDN <span class="arr">↕</span></th>
+            <th>Alerta</th>
+          </tr>
+        </thead>
+        <tbody id="allyTBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- RIESGOS Y SUPUESTOS -->
+  <div class="riesgos-section">
+    <h3>⚠️ Riesgos principales y supuestos de trabajo</h3>
+    <div id="riesgosList"></div>
+  </div>
+
+</div>
+
 </body>
 </html>
