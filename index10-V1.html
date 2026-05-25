@@ -244,6 +244,76 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Segoe UI',Arial,sa
   .am-vert-grid{grid-template-columns:repeat(2,1fr)}
 }
 
+
+/* ── PANEL COMERCIAL ─────────────────────────────────── */
+.comercial-panel{
+  position:absolute;top:8px;right:50px;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(8px);
+  border-radius:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.18);
+  z-index:1001;
+  display:none;
+  min-width:220px;
+  max-width:260px;
+  overflow:hidden;
+  border:2px solid var(--com-color,#888);
+}
+.comercial-panel.visible{display:block}
+.cp-hd{
+  padding:7px 10px;
+  background:var(--com-color,#888);
+  color:#fff;
+  font-size:9px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.cp-avatar{
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;color:#fff;
+  flex-shrink:0;border:2px solid rgba(255,255,255,.5);
+}
+.cp-name{font-size:11px;font-weight:700;line-height:1.2}
+.cp-role{font-size:8px;opacity:.85;font-weight:400;letter-spacing:.3px}
+.cp-countries{
+  padding:6px 10px;
+  display:flex;flex-wrap:wrap;gap:4px;
+}
+.cp-ctag{
+  font-size:9px;padding:2px 6px;border-radius:4px;
+  background:rgba(0,0,0,.07);color:#333;font-weight:600;
+}
+.cp-ctag.active{
+  background:var(--com-color,#888);color:#fff;
+}
+
+/* ── TOGGLE VISTA ─────────────────────────────────────── */
+.vista-toggle{
+  position:absolute;bottom:12px;left:6px;
+  z-index:1002;
+  display:flex;gap:0;
+  border-radius:7px;overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+.vista-toggle button{
+  font-size:9px;font-weight:700;padding:5px 8px;
+  border:none;cursor:pointer;transition:all .2s;
+  background:#e8ecf0;color:#555;letter-spacing:.2px;
+}
+.vista-toggle button.active{background:#1B3A5C;color:#fff}
+.vista-toggle button:hover:not(.active){background:#d0d7de}
+
+/* Marcadores coloración comercial */
+.com-mas{background:#7B2D8B!important}  /* María Antonia */
+.com-cat{background:#C4520E!important}  /* Catalina */
+.com-rss{background:#B8860B!important}  /* María Adelaida */
+
 </style>
 </head>
 <body>
@@ -339,6 +409,24 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Segoe UI',Arial,sa
 </div>
 <div id="mapWrap" style="position:absolute;top:116px;left:0;right:0;bottom:0">
 <div id="map" style="width:100%;height:100%"></div>
+<!-- Panel Comercial -->
+<div class="comercial-panel" id="comercialPanel">
+  <div class="cp-hd">
+    <div class="cp-avatar" id="cpAvatar">M</div>
+    <div>
+      <div class="cp-name" id="cpName">—</div>
+      <div class="cp-role">Responsable Comercial</div>
+    </div>
+  </div>
+  <div class="cp-countries" id="cpCountries"></div>
+</div>
+
+<!-- Toggle Vista Regional -->
+<div class="vista-toggle" id="vistaToggle" style="display:none">
+  <button id="vistaPrio" class="active" onclick="setVista('prio')">🎯 Por Prioridad</button>
+  <button id="vistaComercial" onclick="setVista('comercial')">👩 Por Comercial</button>
+</div>
+
 <div class="prio-fix" id="prioFix">
   <div class="pf"><span class="dot" style="background:#27AE60"></span><span id="pf1">P1</span></div>
   <div class="pf"><span class="dot" style="background:#F1C40F"></span><span id="pf2">P2</span></div>
@@ -619,9 +707,26 @@ function applyFilters(){
   });
   items.forEach(function(d){
     var t=gt(d.ca);
-    if(d.rt){var o={color:t.color,weight:4,opacity:.75};if(d.da)o.dashArray=d.da;var ln=L.polyline(d.rt,o).addTo(map);ln.bindPopup(mkP(d),{maxWidth:340});ln.bindTooltip(d.rl||d.pj,{permanent:false,direction:'center',className:'rt-tip'});layers.push(ln)}
+    var lineColor = (fCountry==='all' && currentVista==='comercial') ? getComercialColor(d) : t.color;
+    if(d.rt){var o={color:lineColor,weight:4,opacity:.75};if(d.da)o.dashArray=d.da;var ln=L.polyline(d.rt,o).addTo(map);ln.bindPopup(mkP(d),{maxWidth:340});ln.bindTooltip(d.rl||d.pj,{permanent:false,direction:'center',className:'rt-tip'});layers.push(ln)}
     if(d.r2){var o2={color:t.color,weight:3,opacity:.6};if(d.da)o2.dashArray=d.da;var l2=L.polyline(d.r2,o2).addTo(map);l2.bindPopup(mkP(d),{maxWidth:340});l2.bindTooltip(d.r2l||'',{permanent:false,direction:'center'});layers.push(l2)}
-    var m=L.marker([d.la,d.lo],{icon:mkI(d)}).addTo(map);m.bindPopup(mkP(d),{maxWidth:340});m._projCode=d.c;layers.push(m);
+    var useIcon;
+    if(fCountry==='all' && currentVista==='comercial'){
+      // Colorear por comercial
+      var comColor = getComercialColor(d);
+      var comIcon = L.divIcon({
+        className:'',
+        html:'<div style="width:34px;height:34px;border-radius:8px;background:'+comColor+
+             ';display:flex;align-items:center;justify-content:center;font-size:18px;'+
+             'box-shadow:0 2px 8px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.6)">'+
+             (function(d){var t=gt(d.ca);return t.icon;})(d)+'</div>',
+        iconSize:[34,34],iconAnchor:[17,17]
+      });
+      useIcon = comIcon;
+    } else {
+      useIcon = mkI(d);
+    }
+    var m=L.marker([d.la,d.lo],{icon:useIcon}).addTo(map);m.bindPopup(mkP(d),{maxWidth:340});m._projCode=d.c;layers.push(m);
   });
   if(layers.length){
     var fg=L.featureGroup(layers);
@@ -629,13 +734,21 @@ function applyFilters(){
   }
   // Update legends
   var grid=document.getElementById('lgd-grid');
-  var seen={};
   grid.innerHTML='';
-  items.forEach(function(d){
-    if(seen[d.ca])return;seen[d.ca]=1;
-    var t=gt(d.ca);
-    grid.innerHTML+='<div class="lgd-chip"><div class="ci" style="background:'+t.color+'">'+t.icon+'</div>'+d.ca+'</div>';
-  });
+  if(fCountry==='all' && currentVista==='comercial'){
+    // Leyenda por comercial
+    Object.keys(COMERCIALES).forEach(function(k){
+      var com = COMERCIALES[k];
+      grid.innerHTML+='<div class="lgd-chip"><div class="ci" style="background:'+com.color+';font-size:10px;font-weight:800">'+com.iniciales+'</div>'+com.nombre.split(' ').slice(0,2).join(' ')+'</div>';
+    });
+  } else {
+    var seen={};
+    items.forEach(function(d){
+      if(seen[d.ca])return;seen[d.ca]=1;
+      var t=gt(d.ca);
+      grid.innerHTML+='<div class="lgd-chip"><div class="ci" style="background:'+t.color+'">'+t.icon+'</div>'+d.ca+'</div>';
+    });
+  }
   // Counts
   var c1=items.filter(function(x){return x.pr==='P1'}).length;
   var c2=items.filter(function(x){return x.pr==='P2'}).length;
@@ -652,6 +765,7 @@ function svC(v,el){
   document.querySelectorAll('.nav button:not(.nav-prio)').forEach(function(b){b.classList.remove('active')});
   if(el)el.classList.add('active');
   fCountry=v;
+  updateComercialPanel(v);
   applyFilters();
   closeSidebar();
 }
@@ -821,7 +935,101 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') document.getElementById('infoOverlay').classList.remove('open');
 });
 
+// ══ COMERCIALES ══════════════════════════════════════════════════════════════
+var COMERCIALES = {
+  mas: {
+    nombre: 'María Antonia Sierra Velásquez',
+    iniciales: 'MA',
+    color: '#7B2D8B',
+    paises: ['Panamá','El Salvador','Guatemala','México'],
+    keys: ['panama','sv','gt','mx']
+  },
+  cat: {
+    nombre: 'Catalina González',
+    iniciales: 'CG',
+    color: '#C4520E',
+    paises: ['Perú','Rep. Dominicana','Bolivia','Brazil'],
+    keys: ['peru','rd','bo','br']
+  },
+  rss: {
+    nombre: 'María Adelaida Russi Gaviria',
+    iniciales: 'MR',
+    color: '#B8860B',
+    paises: ['Ecuador','Costa Rica','Chile','Argentina'],
+    keys: ['ec','cr','cl','ar']
+  }
+};
+
+// Mapa país → comercial
+var PAIS_COMERCIAL = {
+  panama:'mas', sv:'mas', gt:'mas', mx:'mas',
+  peru:'cat', rd:'cat', bo:'cat', br:'cat',
+  ec:'rss', cr:'rss', cl:'rss', ar:'rss'
+};
+
+var currentVista = 'prio'; // 'prio' o 'comercial'
+
+function getComercialColor(d){
+  var cm_rev = {
+    'Perú':'peru','Panamá':'panama','Rep. Dominicana':'rd','El Salvador':'sv',
+    'Costa Rica':'cr','Ecuador':'ec','Guatemala':'gt','México':'mx',
+    'Bolivia':'bo','Chile':'cl','Colombia':'colombia','Colombia — Antioquia':'antioquia'
+  };
+  var paKey = cm_rev[d.pa];
+  if(!paKey) return '#888';
+  var comKey = PAIS_COMERCIAL[paKey];
+  if(!comKey) return '#6FA3D4'; // Colombia/Antioquia → azul GDN
+  return COMERCIALES[comKey].color;
+}
+
+function setVista(v){
+  currentVista = v;
+  document.getElementById('vistaPrio').classList.toggle('active', v==='prio');
+  document.getElementById('vistaComercial').classList.toggle('active', v==='comercial');
+  applyFilters();
+}
+
+function updateComercialPanel(countryKey){
+  var panel = document.getElementById('comercialPanel');
+  var toggle = document.getElementById('vistaToggle');
+  
+  if(countryKey === 'all'){
+    // Vista regional: ocultar panel, mostrar toggle
+    panel.classList.remove('visible');
+    toggle.style.display = 'flex';
+    return;
+  }
+  
+  // Vista país: mostrar panel comercial, ocultar toggle
+  toggle.style.display = 'none';
+  currentVista = 'prio'; // resetear a prioridad al cambiar de país
+  document.getElementById('vistaPrio').classList.add('active');
+  document.getElementById('vistaComercial').classList.remove('active');
+  
+  var comKey = PAIS_COMERCIAL[countryKey];
+  if(!comKey){
+    // Colombia/Antioquia u otros sin comercial asignado
+    panel.classList.remove('visible');
+    return;
+  }
+  
+  var com = COMERCIALES[comKey];
+  panel.style.setProperty('--com-color', com.color);
+  document.getElementById('cpAvatar').textContent = com.iniciales;
+  document.getElementById('cpName').textContent = com.nombre;
+  
+  // Tags de países con activo resaltado
+  var countriesHtml = com.paises.map(function(p, i){
+    var isActive = com.keys[i] === countryKey;
+    return '<span class="cp-ctag'+(isActive?' active':'')+'">'+p+'</span>';
+  }).join('');
+  document.getElementById('cpCountries').innerHTML = countriesHtml;
+  
+  panel.classList.add('visible');
+}
+
 applyFilters();
+updateComercialPanel("all");
 setTimeout(fixLayout,300);
 
 
