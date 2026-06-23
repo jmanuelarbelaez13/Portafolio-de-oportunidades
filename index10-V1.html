@@ -314,6 +314,128 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Segoe UI',Arial,sa
 .com-cat{background:#C4520E!important}  /* Catalina */
 .com-rss{background:#B8860B!important}  /* María Adelaida */
 
+
+/* ══ CAPA 2 VIGILANCIA PANEL ════════════════════════════════════════════════ */
+.capa2-wrap{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;background:#F0F4F8;display:none;padding:0}
+.capa2-wrap.active{display:block}
+
+/* Header interno */
+.c2-header{background:linear-gradient(135deg,#1F3864 0%,#2E75B6 100%);padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.c2-header-left{display:flex;align-items:center;gap:14px}
+.c2-logo{width:42px;height:42px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#1F3864;flex-shrink:0}
+.c2-title h1{font-size:16px;font-weight:700;color:#fff;letter-spacing:.3px;margin:0}
+.c2-title p{font-size:11px;color:#BDD7EE;margin:3px 0 0}
+.c2-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 12px;border-radius:16px;font-size:10px;font-weight:600;letter-spacing:.5px}
+
+/* Sub-tabs internos */
+.c2-tabbar{background:#fff;border-bottom:2px solid #E0EAF5;display:flex;padding:0 28px;gap:0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.c2-tab{padding:12px 20px;cursor:pointer;font-size:12px;font-weight:600;color:#6B7280;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap}
+.c2-tab:hover{color:#2E75B6}
+.c2-tab.active{color:#1F3864;border-bottom-color:#1F3864}
+.c2-panel{display:none}
+.c2-panel.active{display:block}
+
+/* Content wrapper */
+.c2-content{padding:24px 28px;max-width:1400px;margin:0 auto}
+
+/* KPI grid */
+.c2-kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:24px}
+.c2-kpi-card{background:#fff;border-radius:10px;padding:18px 16px;box-shadow:0 2px 8px rgba(0,0,0,.07);border-top:4px solid #2E75B6}
+.c2-kpi-card.green{border-top-color:#70AD47}
+.c2-kpi-card.amber{border-top-color:#ED7D31}
+.c2-kpi-card.red{border-top-color:#C00000}
+.c2-kpi-num{font-size:34px;font-weight:800;color:#1F3864;line-height:1}
+.c2-kpi-lab{font-size:10px;color:#6B7280;margin-top:5px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+
+/* Insight box */
+.c2-insight{background:#EEF4FF;border:1px solid #BDD7EE;border-left:5px solid #1F3864;border-radius:8px;padding:16px 20px;margin-bottom:20px}
+.c2-insight h3{font-size:12px;font-weight:700;color:#1F3864;margin:0 0 7px;text-transform:uppercase;letter-spacing:.5px}
+.c2-insight p{font-size:12px;color:#374151;line-height:1.6;margin:0}
+.c2-insight.green{background:#F0FFF4;border-color:#C6EFCE;border-left-color:#70AD47}
+.c2-insight.amber{background:#FFFBF0;border-color:#FFF2CC;border-left-color:#ED7D31}
+
+/* Two-col layout */
+.c2-two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+
+/* Section title */
+.c2-section-title{font-size:14px;font-weight:700;color:#1F3864;margin-bottom:12px;padding-bottom:7px;border-bottom:2px solid #BDD7EE;display:flex;align-items:center;gap:8px}
+.c2-section-title .c2dot{width:8px;height:8px;border-radius:50%;background:#2E75B6;flex-shrink:0}
+
+/* Table container */
+.c2-table-box{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden;margin-bottom:20px}
+.c2-table-hd{background:#1F3864;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.c2-table-hd h2{color:#fff;font-size:13px;font-weight:700;margin:0}
+.c2-filter-bar{padding:10px 18px;background:#F8FAFC;border-bottom:1px solid #E5E7EB;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.c2-filter-btn{padding:4px 12px;border:1px solid #CBD5E1;border-radius:14px;background:#fff;font-size:10px;font-weight:600;cursor:pointer;color:#374151;transition:all .2s}
+.c2-filter-btn:hover,.c2-filter-btn.active{background:#1F3864;color:#fff;border-color:#1F3864}
+.capa2-wrap table{width:100%;border-collapse:collapse;font-size:11px}
+.capa2-wrap thead th{background:#EEF4FF;color:#1F3864;font-weight:700;text-align:left;padding:9px 12px;border-bottom:2px solid #BDD7EE;font-size:10px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+.capa2-wrap tbody tr{border-bottom:1px solid #F1F5F9;transition:background .15s}
+.capa2-wrap tbody tr:last-child{border-bottom:none}
+.capa2-wrap tbody tr:nth-child(even){background:#FAFBFD}
+.capa2-wrap tbody tr:hover{background:#EEF4FF!important}
+.capa2-wrap tbody td{padding:9px 12px;vertical-align:top;line-height:1.4}
+
+/* Badges */
+.c2b{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+.c2b-alto{background:#C6EFCE;color:#276221}
+.c2b-medio-alto{background:#FFEB9C;color:#9C5700}
+.c2b-medio{background:#FFF2CC;color:#7F6000}
+.c2b-bajo{background:#FFC7CE;color:#9C0006}
+.c2b-real{background:#FFF2CC;color:#7F6000}
+.c2b-estr{background:#DEEAF1;color:#1F4E79}
+.c2b-activo{background:#C6EFCE;color:#276221}
+.c2b-inact{background:#F2F2F2;color:#595959}
+.c2b-toxico{background:#FFC7CE;color:#9C0006;border:1px solid #C00000}
+.c2b-vacio{background:#FFF2CC;color:#7F6000}
+.c2b-u1{background:#C00000;color:#fff}
+.c2b-u2{background:#ED7D31;color:#fff}
+.c2b-u3{background:#70AD47;color:#fff}
+.c2b-esp{background:#F3E8FF;color:#5B21B6}
+.c2b-bra{background:#DCFCE7;color:#166534}
+.c2b-lac{background:#FEF3C7;color:#92400E}
+.c2b-prov{background:#DBEAFE;color:#1D4ED8}
+
+/* Vacíos cards */
+.c2-vacios-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px;margin-bottom:20px}
+.c2-vcard{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);overflow:hidden}
+.c2-vcard-top{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.c2-vcard-top.u1{background:#FFF5F5;border-left:5px solid #C00000}
+.c2-vcard-top.u2{background:#FFF8F0;border-left:5px solid #ED7D31}
+.c2-vcard-top.u3{background:#F0FFF4;border-left:5px solid #70AD47}
+.c2-vcard-country{font-size:14px;font-weight:800;color:#1F3864}
+.c2-vcard-title{font-size:12px;font-weight:600;color:#374151;padding:10px 16px 4px}
+.c2-vcard-body{padding:0 16px 12px;font-size:11px;color:#6B7280;line-height:1.5}
+.c2-vcard-foot{padding:9px 16px;background:#F8FAFC;border-top:1px solid #E5E7EB;font-size:10px;color:#374151}
+.c2-vcard-foot strong{color:#1F3864}
+
+/* Aliados cards */
+.c2-aliados-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:16px;margin-bottom:20px}
+.c2-acard{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);overflow:hidden}
+.c2-acard-top{padding:16px 18px 12px;border-bottom:1px solid #E5E7EB;display:flex;gap:12px;align-items:flex-start}
+.c2-rank{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0}
+.c2-rank-1{background:#1F3864;color:#fff}
+.c2-rank-2{background:#2E75B6;color:#fff}
+.c2-rank-3{background:#5BA3D9;color:#fff}
+.c2-rank-4{background:#8DB8D4;color:#fff}
+.c2-rank-n{background:#CBD5E1;color:#374151}
+.c2-acard-name{font-size:14px;font-weight:800;color:#1F3864;margin:0}
+.c2-acard-sub{font-size:10px;color:#6B7280;margin-top:3px}
+.c2-acard-body{padding:12px 18px}
+.c2-arow{display:flex;gap:8px;margin-bottom:8px;font-size:11px}
+.c2-arow-lbl{font-weight:700;color:#374151;min-width:88px;flex-shrink:0}
+.c2-arow-val{color:#4B5563;line-height:1.4}
+.c2-acard-action{padding:9px 18px 12px;background:#EEF4FF;border-top:1px solid #BDD7EE;font-size:11px;color:#1F3864}
+.c2-acard-action strong{font-weight:700}
+
+/* Footer note */
+.c2-footer{text-align:center;padding:18px 28px;font-size:10px;color:#9CA3AF;border-top:1px solid #E5E7EB;margin-top:4px}
+
+@media(max-width:768px){
+  .c2-content{padding:14px}
+  .c2-two-col{grid-template-columns:1fr}
+  .c2-vacios-grid,.c2-aliados-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -399,7 +521,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Segoe UI',Arial,sa
   </div>
   <button class="hdr-menu-btn" onclick="toggleSidebar()">☰</button>
 </div>
-<div class="tabs" id="tabs"><button class="active" data-view="map" onclick="setView('map',this)">🗺️ Mapa</button><button data-view="table" onclick="setView('table',this)">📊 Tabla · D.E.</button><button data-view="aliados" onclick="setView('aliados',this)">🤝 Aliados Estratégicos</button></div>
+<div class="tabs" id="tabs"><button class="active" data-view="map" onclick="setView('map',this)">🗺️ Mapa</button><button data-view="table" onclick="setView('table',this)">📊 Tabla · D.E.</button><button data-view="aliados" onclick="setView('aliados',this)">🤝 Aliados Estratégicos</button><button data-view="capa2" onclick="setView('capa2',this)">🔍 Capa 2 · Vigilancia</button></div>
 <div class="bar2" id="bar2">
 <span class="bar2-lab">Prioridad:</span>
 <button class="nav-prio active" onclick="svP('all',this)">Todas</button>
@@ -1492,10 +1614,26 @@ setView = function(v, el){
     document.getElementById('tblWrap').style.display = 'none';
     document.getElementById('tblWrap').classList.remove('active');
     alidosWrap.classList.add('active');
+    document.getElementById('bar2').style.display = 'none';
+    var c2w = document.getElementById('capa2Wrap');
+    if(c2w) c2w.classList.remove('active');
     renderAllyTable();
     renderRiesgos();
+  } else if(v === 'capa2'){
+    currentView = 'capa2';
+    document.querySelectorAll('.tabs button').forEach(function(b){b.classList.remove('active')});
+    if(el) el.classList.add('active');
+    document.getElementById('mapWrap').style.display = 'none';
+    document.getElementById('tblWrap').style.display = 'none';
+    document.getElementById('tblWrap').classList.remove('active');
+    alidosWrap.classList.remove('active');
+    document.getElementById('capa2Wrap').classList.add('active');
+    document.getElementById('bar2').style.display = 'none';
   } else {
     alidosWrap.classList.remove('active');
+    var c2w = document.getElementById('capa2Wrap');
+    if(c2w) c2w.classList.remove('active');
+    document.getElementById('bar2').style.display = '';
     __origSetView(v, el);
   }
 };
@@ -1507,6 +1645,21 @@ document.addEventListener('keydown', function(e){
     document.getElementById('countryModalOverlay').classList.remove('open');
   }
 });
+
+// ══ CAPA 2 VIGILANCIA ════════════════════════════════════════════════════
+function showC2Tab(id, el){
+  document.querySelectorAll('.c2-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.c2-tab').forEach(function(t){t.classList.remove('active')});
+  document.getElementById('c2p-'+id).classList.add('active');
+  el.classList.add('active');
+}
+function filterC2Actores(eco, btn){
+  document.querySelectorAll('.c2-filter-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.querySelectorAll('#c2-tabla-actores tbody tr').forEach(function(row){
+    row.style.display=(eco==='all'||row.dataset.eco===eco)?'':'none';
+  });
+}
 
 </script>
 
@@ -1650,6 +1803,513 @@ document.addEventListener('keydown', function(e){
   <div class="riesgos-section">
     <h3>⚠️ Riesgos principales y supuestos de trabajo</h3>
     <div id="riesgosList"></div>
+  </div>
+
+</div>
+
+
+<!-- ══ CAPA 2 VIGILANCIA ALAMYS ════════════════════════════════════════════ -->
+<div id="capa2Wrap" class="capa2-wrap" style="top:116px">
+
+  <!-- Header -->
+  <div class="c2-header">
+    <div class="c2-header-left">
+      <div class="c2-logo">M</div>
+      <div class="c2-title">
+        <h1>CAPA 2 — Inteligencia Comercial ALAMYS</h1>
+        <p>Metro de Medellín · Gerencia de Desarrollo de Negocios · Junio 2026</p>
+      </div>
+    </div>
+    <div class="c2-badge">CONFIDENCIAL</div>
+  </div>
+
+  <!-- Sub-tabs -->
+  <div class="c2-tabbar">
+    <div class="c2-tab active" onclick="showC2Tab('resumen',this)">📊 Resumen Ejecutivo</div>
+    <div class="c2-tab" onclick="showC2Tab('actores',this)">🗺 Mapa de Actores</div>
+    <div class="c2-tab" onclick="showC2Tab('vacios',this)">🎯 Vacíos × Capa 1</div>
+    <div class="c2-tab" onclick="showC2Tab('aliados',this)">🤝 Aliados Estratégicos</div>
+  </div>
+
+  <!-- ─── SUB-TAB: RESUMEN ──────────────────────────────────────────── -->
+  <div id="c2p-resumen" class="c2-panel active">
+  <div class="c2-content">
+
+    <div class="c2-kpi-grid">
+      <div class="c2-kpi-card"><div class="c2-kpi-num">38</div><div class="c2-kpi-lab">Hallazgos investigados</div></div>
+      <div class="c2-kpi-card green"><div class="c2-kpi-num">8</div><div class="c2-kpi-lab">Vacíos accionables</div></div>
+      <div class="c2-kpi-card"><div class="c2-kpi-num">3</div><div class="c2-kpi-lab">Aliados prioritarios</div></div>
+      <div class="c2-kpi-card amber"><div class="c2-kpi-num">90</div><div class="c2-kpi-lab">Opor. Capa 1 en mercados con vacío</div></div>
+      <div class="c2-kpi-card red"><div class="c2-kpi-num">3</div><div class="c2-kpi-lab">Vacíos urgencia 1 (actuar YA)</div></div>
+      <div class="c2-kpi-card"><div class="c2-kpi-num">221</div><div class="c2-kpi-lab">Total opor. Capa 1 (13 países)</div></div>
+    </div>
+
+    <div class="c2-insight">
+      <h3>★ Hallazgo Estructural — La Ventaja Asimétrica</h3>
+      <p>Los operadores europeos (Metro de Madrid, TMB, FGC, FGV, Tenerife) están atrapados por la <strong>regla del 80/20 del "medio propio"</strong> (LCSP Art. 32): si sus ingresos externos superan el 20% del total, pierden el estatus de operador interno de su comunidad autónoma. Esto los condena a actuar solo vía filiales aisladas, consorcios minoritarios o asistencia técnica pura sin riesgo. <strong>Metro de Medellín NO tiene esta restricción</strong> — puede licitar como operador principal en cualquier país LAC, aportando el componente de O&M que las ingenierías europeas necesitan para cerrar consorcios. Esta es la ventaja más importante que debe comunicar la GDN.</p>
+    </div>
+
+    <div class="c2-two-col">
+      <div class="c2-insight green">
+        <h3>✓ Posición actual de Metro de Medellín</h3>
+        <p><strong>Ya ganó en Ecuador</strong> (Metro de Quito L1, consorcio con Transdev, 2022) — primer contrato internacional real. Metrô SP de Brasil fue el competidor directo y perdió. Esta referencia es el activo comercial más valioso para los mercados prioritarios identificados.</p>
+      </div>
+      <div class="c2-insight amber">
+        <h3>[!!] Principal competidor a vigilar</h3>
+        <p><strong>Metrô SP (Metrô Consulting)</strong> — marco legal permisivo, ganó el monorriel de Santo Domingo (~$22.5M). Está buscando activamente contratos en LAC. Metro de Medellín debe anticiparse en Panamá y Rep. Dominicana antes de que Metrô SP se posicione.</p>
+      </div>
+    </div>
+
+    <div class="c2-section-title"><div class="c2dot"></div>Prioridades inmediatas de acción</div>
+    <div class="c2-table-box">
+      <table>
+        <thead><tr><th>#</th><th>Acción</th><th>Mercado</th><th>Actor clave</th><th>Plazo</th><th>Urgencia</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>Propuesta estructuración Teleférico San Miguelito — 16 empresas ya mostraron interés (abr-2026)</td>
+            <td>Panamá</td><td>MPSA + INGEOTRANS</td><td>Julio 2026</td>
+            <td><span class="c2b c2b-u1">URGENTE</span></td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>Consorcio para consultoría SIT OPRET+OMSA (Ley 63-17 en ejecución)</td>
+            <td>Rep. Dominicana</td><td>INGEOTRANS + OPRET</td><td>Julio 2026</td>
+            <td><span class="c2b c2b-u1">URGENTE</span></td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>Programa de formación RRHH ferroviarios — escasez severa (acuerdo emergencia PUCMM oct-2024)</td>
+            <td>Rep. Dominicana</td><td>OPRET / PUCMM</td><td>Agosto 2026</td>
+            <td><span class="c2b c2b-u1">URGENTE</span></td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>Acuerdo marco co-licitación con AYESA para fases de explotación post-construcción</td>
+            <td>LAC múltiple</td><td>AYESA (oficina Bogotá)</td><td>Agosto 2026</td>
+            <td><span class="c2b c2b-u2">Q3 2026</span></td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td>Shadow operator técnico del concedente para L3, L4, L7 (ATU sin experiencia operativa)</td>
+            <td>Perú</td><td>ATU / ProInversión</td><td>Q3 2026</td>
+            <td><span class="c2b c2b-u2">Q3 2026</span></td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td>Fortalecer presencia en comités técnicos ALAMYS (TMB como Sec. Gral. tiene acceso anticipado a mercado)</td>
+            <td>Regional</td><td>Secretaría ALAMYS</td><td>Continuo</td>
+            <td><span class="c2b c2b-u3">Estratégico</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- ─── SUB-TAB: ACTORES ──────────────────────────────────────────── -->
+  <div id="c2p-actores" class="c2-panel">
+  <div class="c2-content">
+
+    <div class="c2-table-box">
+      <div class="c2-table-hd"><h2>Mapa de Operadores y Proveedores ALAMYS — Actividad Internacional 2024-2026</h2></div>
+      <div class="c2-filter-bar">
+        <span style="font-size:10px;font-weight:700;color:#6B7280;">FILTRAR:</span>
+        <button class="c2-filter-btn active" onclick="filterC2Actores('all',this)">Todos</button>
+        <button class="c2-filter-btn" onclick="filterC2Actores('ESP',this)">ESP España</button>
+        <button class="c2-filter-btn" onclick="filterC2Actores('BRA',this)">BRA Brasil/Portugal</button>
+        <button class="c2-filter-btn" onclick="filterC2Actores('LAC',this)">LAC</button>
+        <button class="c2-filter-btn" onclick="filterC2Actores('PROV',this)">PROV Proveedores</button>
+      </div>
+      <table id="c2-tabla-actores">
+        <thead><tr>
+          <th>ID</th><th>Entidad</th><th>País</th><th>Ecosistema</th>
+          <th>Restricción</th><th>Estado</th><th>Potencial</th>
+          <th>Vacío</th><th>Hallazgo clave</th>
+        </tr></thead>
+        <tbody>
+          <!-- ESPAÑA -->
+          <tr data-eco="ESP">
+            <td><strong>ESP-01</strong></td><td><strong>Metro de Madrid</strong></td><td>España</td>
+            <td><span class="c2b c2b-esp">España</span></td>
+            <td><span class="c2b c2b-bajo">Sí (80/20)</span></td>
+            <td><span class="c2b c2b-activo">Activo (Lima)</span></td>
+            <td><span class="c2b c2b-medio">Medio</span></td>
+            <td><span class="c2b c2b-estr">Estructural</span></td>
+            <td style="max-width:280px">Activo en Lima hasta 2033 (RAMS L2/Gambetta). Nuevo en Alejandría Egipto (2025). INACTIVO en Santo Domingo post-2013 y Ecuador (multa $1.3M Contraloría).</td>
+          </tr>
+          <tr data-eco="ESP">
+            <td><strong>ESP-02</strong></td><td><strong>TMB/Barcelona</strong></td><td>España</td>
+            <td><span class="c2b c2b-esp">España</span></td>
+            <td><span class="c2b c2b-bajo">Sí (80/20 + sin SAU)</span></td>
+            <td><span class="c2b c2b-inact">Inactivo (post-Panamá 2017)</span></td>
+            <td><span class="c2b c2b-bajo">Bajo</span></td>
+            <td><span class="c2b c2b-estr">Estructural</span></td>
+            <td style="max-width:280px">Solo Secretaría General ALAMYS (soft power, 2023-2029). Sin filial SAU = no puede licitar. Fue socio de AYESA en Panamá L1/L2 (2010-2017).</td>
+          </tr>
+          <tr data-eco="ESP">
+            <td><strong>ESP-03</strong></td><td><strong>Metro Tenerife</strong></td><td>España</td>
+            <td><span class="c2b c2b-esp">España</span></td>
+            <td><span class="c2b c2b-bajo">Sí (parcial)</span></td>
+            <td><span class="c2b c2b-activo">Muy activo (IP/RAMS)</span></td>
+            <td><span class="c2b c2b-medio">Medio (RAMS)</span></td>
+            <td><span class="c2b c2b-real">Real</span></td>
+            <td style="max-width:280px">MUY ACTIVO vía patentes: Metrorrey México (RAMS 2026), Egipto, Senegal, Israel, Ecuador, Bolivia, Perú, Regiotram Colombia 2019. NO hace O&M pesado — vacío para Metro Medellín.</td>
+          </tr>
+          <tr data-eco="ESP">
+            <td><strong>ESP-04</strong></td><td><strong>FGC Mobilitat SAU</strong></td><td>España</td>
+            <td><span class="c2b c2b-esp">España</span></td>
+            <td><span class="c2b c2b-activo">No (SAU resuelve 80/20)</span></td>
+            <td><span class="c2b c2b-activo">Activo (Colombia)</span></td>
+            <td><span class="c2b c2b-medio-alto">Medio-Alto (ALIADO)</span></td>
+            <td><span class="c2b c2b-real">Real</span></td>
+            <td style="max-width:280px">Filial creada 2021. ACTIVO: señalización Metro de Medellín (~€3M, con Ardanuy) y Regiotram de Occidente Cundinamarca (proyecto DIFERENTE al Metro Medellín). También Argentina.</td>
+          </tr>
+          <tr data-eco="ESP">
+            <td><strong>ESP-05</strong></td><td><strong>FGV Valencia</strong></td><td>España</td>
+            <td><span class="c2b c2b-esp">España</span></td>
+            <td><span class="c2b c2b-bajo">Sí (Decreto 144/1986)</span></td>
+            <td><span class="c2b c2b-inact">Inactivo post-2019</span></td>
+            <td><span class="c2b c2b-bajo">Bajo</span></td>
+            <td><span class="c2b c2b-estr">Estructural</span></td>
+            <td style="max-width:280px">Solo prefactibilidad Bogotram 2019. Plan €840M 2026-2030 para red interna — sin capacidad exportadora real.</td>
+          </tr>
+          <tr data-eco="ESP">
+            <td><strong>ESP-06</strong></td><td><strong>ATM Barcelona</strong></td><td>España</td>
+            <td><span class="c2b c2b-esp">España</span></td>
+            <td><span class="c2b c2b-bajo">Sí (naturaleza consorciada)</span></td>
+            <td><span class="c2b c2b-inact">Solo soft power</span></td>
+            <td><span class="c2b c2b-bajo">Bajo (no compite)</span></td>
+            <td><span class="c2b c2b-estr">Estructural</span></td>
+            <td style="max-width:280px">Autoridad de coordinación — no opera metros. Diplomacia institucional en ALAMYS y UITP. Puede influir en TDR de licitaciones LAC.</td>
+          </tr>
+          <tr data-eco="ESP">
+            <td><strong>ESP-07</strong></td><td><strong>EMOVA Movilidad</strong></td><td>Argentina</td>
+            <td><span class="c2b c2b-esp">ESP (*)</span></td>
+            <td><span class="c2b c2b-activo">No (empresa privada ARG)</span></td>
+            <td><span class="c2b c2b-activo">Activo — Subte Buenos Aires</span></td>
+            <td><span class="c2b c2b-bajo">Bajo (solo ARG)</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">EMOVA es empresa argentina 100% (Metrovías + Grupo Benito Roggio). NO es filial de TMB. Opera Subte Buenos Aires 2021-2033. Sin actividad LAC fuera de Argentina.</td>
+          </tr>
+          <!-- BRASIL/PORTUGAL -->
+          <tr data-eco="BRA">
+            <td><strong>BRA-01</strong></td><td><strong>Metrô SP (Consulting)</strong></td><td>Brasil</td>
+            <td><span class="c2b c2b-bra">Brasil</span></td>
+            <td><span class="c2b c2b-activo">No (marco permisivo SP)</span></td>
+            <td><span class="c2b c2b-bajo">COMPETIDOR FRONTAL</span></td>
+            <td><span class="c2b c2b-bajo">Bajo (es competidor)</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">PRINCIPAL COMPETIDOR REGIONAL. Perdió en Ecuador 2022 ante Metro Medellín+Transdev. Ganó monorriel Santo Domingo (~$22.5M). Monitorear activamente su pipeline LAC.</td>
+          </tr>
+          <tr data-eco="BRA">
+            <td><strong>BRA-02</strong></td><td><strong>CPTM Serviços</strong></td><td>Brasil</td>
+            <td><span class="c2b c2b-bra">Brasil</span></td>
+            <td><span class="c2b c2b-activo">No (marco permisivo SP)</span></td>
+            <td><span class="c2b c2b-vacio">Emergente (LAC)</span></td>
+            <td><span class="c2b c2b-medio">Medio (aliado cercanías)</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">Brazo internacional lanzado 2do semestre 2024. Primer contrato: diagnóstico malha RJ (~9M reales). Foco declarado: solo LAC. Potencial aliado en cercanías.</td>
+          </tr>
+          <tr data-eco="BRA">
+            <td><strong>BRA-03</strong></td><td><strong>Metro do Porto</strong></td><td>Portugal</td>
+            <td><span class="c2b c2b-bra">Portugal</span></td>
+            <td><span class="c2b c2b-bajo">Sí (fondos europeos PRR)</span></td>
+            <td><span class="c2b c2b-inact">Inactivo (filial registral)</span></td>
+            <td><span class="c2b c2b-medio">Medio (aliado inst.)</span></td>
+            <td><span class="c2b c2b-estr">Estructural</span></td>
+            <td style="max-width:280px">Filial 'Consultoria Unipessoal Lda' sin proyectos LAC activos. Constreñido por fondos europeos PRR. ALIADO INSTITUCIONAL para benchmarking VLT/metros ligeros.</td>
+          </tr>
+          <!-- LAC -->
+          <tr data-eco="LAC">
+            <td><strong>LAC-01</strong></td><td><strong>Metro de Panamá (MPSA)</strong></td><td>Panamá</td>
+            <td><span class="c2b c2b-lac">LAC</span></td>
+            <td><span class="c2b c2b-bajo">Sí (Ley 109/2013 territorial)</span></td>
+            <td><span class="c2b c2b-vacio">Importador neto</span></td>
+            <td><span class="c2b c2b-alto">ALTO — CLIENTE</span></td>
+            <td><span class="c2b c2b-real">Real</span></td>
+            <td style="max-width:280px">IMPORTADOR NETO. TMB+AYESA INACTIVOS post-2017. VACÍO CRÍTICO: Teleférico San Miguelito (Res. Gabinete N°71, ago-2024) + Cultura Organizacional.</td>
+          </tr>
+          <tr data-eco="LAC">
+            <td><strong>LAC-02</strong></td><td><strong>OPRET Santo Domingo</strong></td><td>Rep. Dom.</td>
+            <td><span class="c2b c2b-lac">LAC</span></td>
+            <td><span class="c2b c2b-bajo">Sí (mandato local)</span></td>
+            <td><span class="c2b c2b-vacio">Importador neto + fusión</span></td>
+            <td><span class="c2b c2b-alto">ALTO — CLIENTE</span></td>
+            <td><span class="c2b c2b-real">Real</span></td>
+            <td style="max-width:280px">Fusión forzada con OMSA (Ley 63-17). AFD activa. Metro Madrid INACTIVO. PUCMM (acuerdo emergencia formación oct-2024). TRIPLE VACÍO: SIT + formación RRHH + FITRAM ($2B, 32km).</td>
+          </tr>
+          <tr data-eco="LAC">
+            <td><strong>LAC-03</strong></td><td><strong>REMED — Guatemala</strong></td><td>Guatemala</td>
+            <td><span class="c2b c2b-lac">LAC</span></td>
+            <td><span class="c2b c2b-bajo">N/A (en litigio)</span></td>
+            <td><span class="c2b c2b-toxico">TOXICO — EVITAR</span></td>
+            <td><span class="c2b c2b-bajo">No actuar</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">EMPRESA DE PAPEL en litigio constitucional y penal. Proyecto Tren Guatemala paralizado. Solo reentrar post-saneamiento con aval BID/CAF.</td>
+          </tr>
+          <tr data-eco="LAC">
+            <td><strong>LAC-04</strong></td><td><strong>ATU / Lima — Perú</strong></td><td>Perú</td>
+            <td><span class="c2b c2b-lac">LAC</span></td>
+            <td><span class="c2b c2b-bajo">Sí (ATU sin objeto op.)</span></td>
+            <td><span class="c2b c2b-vacio">Vacío activo (L3/L4/L7)</span></td>
+            <td><span class="c2b c2b-alto">ALTO — SHADOW OPERATOR</span></td>
+            <td><span class="c2b c2b-real">Real</span></td>
+            <td style="max-width:280px">ATU planifica SIN experiencia operativa directa. Plan Movilidad 2025-2045 = 9 líneas nuevas. L4 EN CONSTRUCCIÓN (mar-2024). L3 y L7 en estructuración. 28 oportunidades Capa 1.</td>
+          </tr>
+          <!-- PROVEEDORES -->
+          <tr data-eco="PROV">
+            <td><strong>PROV-01</strong></td><td><strong>AYESA Ingeniería</strong></td><td>España</td>
+            <td><span class="c2b c2b-prov">Proveedor</span></td>
+            <td><span class="c2b c2b-activo">No (empresa privada)</span></td>
+            <td><span class="c2b c2b-activo">Muy activo LAC</span></td>
+            <td><span class="c2b c2b-alto">ALTO — ALIADO #1</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">PMO megaproyectos: Metro Bogotá ($3.2B), Santiago L7 ($11M), México ($20M), Metro SD L1. Adquirida por Colliers International. NECESITA socio operador O&M.</td>
+          </tr>
+          <tr data-eco="PROV">
+            <td><strong>PROV-02</strong></td><td><strong>INGEOTRANS</strong></td><td>España</td>
+            <td><span class="c2b c2b-prov">Proveedor</span></td>
+            <td><span class="c2b c2b-activo">No (empresa privada)</span></td>
+            <td><span class="c2b c2b-activo">Activo RD/Colombia</span></td>
+            <td><span class="c2b c2b-alto">ALTO — ALIADO #2</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">Shadow operator OPRET 2006-2021. Supervisó MetroCable Medellín K/J/L (2007-2018). Aval Banco Mundial. PUERTA DIRECTA a OPRET Santo Domingo.</td>
+          </tr>
+          <tr data-eco="PROV">
+            <td><strong>PROV-03</strong></td><td><strong>SOFRATESA GROUP</strong></td><td>Francia</td>
+            <td><span class="c2b c2b-prov">Proveedor</span></td>
+            <td><span class="c2b c2b-activo">No (empresa privada)</span></td>
+            <td><span class="c2b c2b-activo">Muy activo Caribe/CA</span></td>
+            <td><span class="c2b c2b-medio-alto">Medio-Alto — ALIADO #3</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">Recaudo Metro SD 11 años. Bombeo L1 Metro Panamá. Aerovía Guayaquil. Personal permanente en SD, Panamá, Guayaquil, Bogotá.</td>
+          </tr>
+          <tr data-eco="PROV">
+            <td><strong>PROV-04</strong></td><td><strong>MASABI</strong></td><td>Reino Unido</td>
+            <td><span class="c2b c2b-prov">Proveedor</span></td>
+            <td><span class="c2b c2b-activo">No (empresa privada)</span></td>
+            <td><span class="c2b c2b-activo">Activo (México via Ibergex)</span></td>
+            <td><span class="c2b c2b-medio">Medio — aliado tecnológico</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">Plataforma Justride FPaaS: ABT + cEMV + BYOT. Ahorro 42-73% vs. hardware propietario. Ingeniería en Colombia. Para modernización tarifaria SIT en LAC.</td>
+          </tr>
+          <tr data-eco="PROV">
+            <td><strong>PROV-05</strong></td><td><strong>IDOM Consulting</strong></td><td>España</td>
+            <td><span class="c2b c2b-prov">Proveedor</span></td>
+            <td><span class="c2b c2b-activo">No</span></td>
+            <td><span class="c2b c2b-toxico">DESCARTADO</span></td>
+            <td><span class="c2b c2b-bajo">No actuar</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">[!!] DESCARTADO: Metro de Medellín tiene DEMANDA ACTIVA contra IDOM por defectos de diseño en Tranvía Ayacucho / cable. Alianza imposible hasta resolución judicial.</td>
+          </tr>
+          <tr data-eco="PROV">
+            <td><strong>PROV-06</strong></td><td><strong>HITACHI RAIL STS</strong></td><td>Japón/Italia</td>
+            <td><span class="c2b c2b-prov">Proveedor</span></td>
+            <td><span class="c2b c2b-activo">No</span></td>
+            <td><span class="c2b c2b-activo">Muy activo (turnkey)</span></td>
+            <td><span class="c2b c2b-bajo">Bajo — COMPETIDOR</span></td>
+            <td><span class="c2b c2b-real">No aplica</span></td>
+            <td style="max-width:280px">Turnkey puro: trenes + CBTC + OS&M driverless (GoA4). Lima L2/L4, Copenhague, Riyadh. Adquirió Thales GTS 2022. Autosuficiente — no necesita socios operadores.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- ─── SUB-TAB: VACÍOS ──────────────────────────────────────────── -->
+  <div id="c2p-vacios" class="c2-panel">
+  <div class="c2-content">
+
+    <div class="c2-insight">
+      <h3>Como leer esta tabla</h3>
+      <p><strong>Vacío Real</strong>: el otro operador podría competir pero no lo hace → oportunidad directa de entrada. <strong>Vacío Estructural</strong>: el operador NO PUEDE legalmente → Metro de Medellín tiene ventaja por defecto. Los 8 vacíos cruzan con 90 de las 221 oportunidades de Capa 1 (41% del universo).</p>
+    </div>
+
+    <div class="c2-vacios-grid">
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u1">
+          <div><div class="c2-vcard-country">Panamá</div><div style="font-size:10px;color:#6B7280;margin-top:2px">15 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u1">Urgencia 1</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">Teleférico San Miguelito — Shadow operator técnico del Estado</div>
+        <div class="c2-vcard-body">Resolución Gabinete N°71 (agosto 2024) abrió proceso para estructurar el pliego. 16 empresas mostraron interés en abril 2026. <strong>Metro de Medellín es el único operador LAC con experiencia real en Metrocable masivo.</strong></div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro Medellín + INGEOTRANS (contactos MPSA) + AYESA (PMO)</div>
+      </div>
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u2">
+          <div><div class="c2-vcard-country">Panamá</div><div style="font-size:10px;color:#6B7280;margin-top:2px">15 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u2">Urgencia 2</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">Cultura Organizacional y corresponsabilidad ciudadana</div>
+        <div class="c2-vcard-body">MPSA recibió de TMB solo la "ingeniería dura" — sin modelo pedagógico de Cultura Metro ni relacionamiento ciudadano. Propuesta de consultoría directa de bajo costo y alto impacto reputacional.</div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro de Medellín (consultoría directa)</div>
+      </div>
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u1">
+          <div><div class="c2-vcard-country">Rep. Dominicana</div><div style="font-size:10px;color:#6B7280;margin-top:2px">14 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u1">Urgencia 1</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">SIT — Integración operativa y tarifaria OPRET + OMSA (Ley 63-17)</div>
+        <div class="c2-vcard-body">La ley 63-17 ordena la fusión OPRET+OMSA en un SIT. AFD activa pero aporta teoría, no ejecución operativa. Ventana crítica: la fusión está en marcha ahora. Si Metro de Medellín no entra, AFD o consultora europea copará el espacio.</div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro Medellín + INGEOTRANS + MASABI (plataforma ABT)</div>
+      </div>
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u1">
+          <div><div class="c2-vcard-country">Rep. Dominicana</div><div style="font-size:10px;color:#6B7280;margin-top:2px">14 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u1">Urgencia 1</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">Formación RRHH Ferroviario — Escasez crítica de talento técnico</div>
+        <div class="c2-vcard-body">Acuerdo de emergencia PUCMM (octubre 2024) evidencia la escasez severa. Metro de Madrid salió y no hay reemplazo técnico. INGEOTRANS conoce directivos de OPRET y facilita el contacto institucional.</div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro Medellín + INGEOTRANS + TÜV Rheinland (certificación)</div>
+      </div>
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u2">
+          <div><div class="c2-vcard-country">Rep. Dominicana</div><div style="font-size:10px;color:#6B7280;margin-top:2px">14 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u2">Urgencia 2</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">Tren Metropolitano FITRAM — $2B, 32km, en estructuración</div>
+        <div class="c2-vcard-body">75M pasajeros/año proyectados. Necesita validadores de demanda, shadow operator del concedente y PMO. Sin licitación publicada aún. Actuar en preinversión para influir en TDR.</div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro Medellín + AYESA + INGEOTRANS</div>
+      </div>
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u1">
+          <div><div class="c2-vcard-country">Perú</div><div style="font-size:10px;color:#6B7280;margin-top:2px">28 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u1">Urgencia 1</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">Shadow Operator Técnico del Concedente — Líneas L3, L4 y L7</div>
+        <div class="c2-vcard-body">ATU y ProInversión carecen de experiencia operativa directa. El Estado peruano privatizó la operación de L1 y perdió su músculo técnico. L4 ya en construcción (marzo 2024). L3 y L7 en estructuración.</div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro Medellín + AYESA (ingeniería civil)</div>
+      </div>
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u3">
+          <div><div class="c2-vcard-country">México</div><div style="font-size:10px;color:#6B7280;margin-top:2px">18 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u3">Urgencia 3</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">O&M Metrorrey / Extensiones — Tenerife solo hace RAMS</div>
+        <div class="c2-vcard-body">Tenerife tiene contrato RAMS (patentes) en Monterrey para 2026 pero no hace O&M pesado. AYESA ya tiene €20M en contratos ferroviarios en México. Metro de Medellín puede posicionarse como operador real donde Tenerife solo tiene IP.</div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro Medellín + AYESA (presencia en mercado mexicano)</div>
+      </div>
+
+      <div class="c2-vcard">
+        <div class="c2-vcard-top u2">
+          <div><div class="c2-vcard-country">Ecuador</div><div style="font-size:10px;color:#6B7280;margin-top:2px">15 oportunidades Capa 1</div></div>
+          <div style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="c2b c2b-u2">Urgencia 2</span><span class="c2b c2b-real">Vacío Real</span></div>
+        </div>
+        <div class="c2-vcard-title">Metro de Quito L1 — Extender y posicionar para L2</div>
+        <div class="c2-vcard-body">Metro de Medellín + Transdev YA ganaron en 2022. Metro de Madrid salió (multa $1.3M Contraloría). Metrô SP también postuló y perdió. Esta victoria es el activo comercial más poderoso. Fortalecer y extender contrato.</div>
+        <div class="c2-vcard-foot"><strong>Consorcio recomendado:</strong> Metro Medellín + Transdev (consorcio vigente)</div>
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+
+  <!-- ─── SUB-TAB: ALIADOS ──────────────────────────────────────────── -->
+  <div id="c2p-aliados" class="c2-panel">
+  <div class="c2-content">
+
+    <div class="c2-insight">
+      <h3>Logica del ranking</h3>
+      <p>El criterio principal: ¿puede este aliado abrir una puerta que Metro de Medellín no puede abrir solo, y necesita lo que Metro de Medellín tiene? Los tres aliados top tienen <strong>acceso institucional en los mercados objetivo</strong> pero carecen del credencial operativo O&M que Metro de Medellín aporta.</p>
+    </div>
+
+    <div class="c2-aliados-grid">
+
+      <div class="c2-acard">
+        <div class="c2-acard-top">
+          <div class="c2-rank c2-rank-1">1</div>
+          <div><p class="c2-acard-name">AYESA Ingeniería y Arquitectura S.A.U.</p><div class="c2-acard-sub">España (oficina en Colombia) · <span class="c2b c2b-alto">Potencial ALTO</span></div></div>
+        </div>
+        <div class="c2-acard-body">
+          <div class="c2-arow"><span class="c2-arow-lbl">Presencia LAC:</span><span class="c2-arow-val">Chile, Colombia, México, RD, Panamá, Perú, Ecuador</span></div>
+          <div class="c2-arow"><span class="c2-arow-lbl">Por qué #1:</span><span class="c2-arow-val">PMO de megaproyectos en construcción que necesitarán un operador O&M. Metro de Medellín aporta lo que AYESA no puede tener internamente. Fue socia de TMB en Panamá.</span></div>
+          <div class="c2-arow"><span class="c2-arow-lbl">Track record:</span><span class="c2-arow-val">Metro Bogotá $3.2B · Santiago L7 $11M · México $20M · Metro SD L1 · Canal Panamá $36.3M</span></div>
+        </div>
+        <div class="c2-acard-action"><strong>► Primera acción:</strong> Reunión AYESA Bogotá — proponer acuerdo marco co-licitación para fases explotación post-construcción de sus megaproyectos activos.</div>
+      </div>
+
+      <div class="c2-acard">
+        <div class="c2-acard-top">
+          <div class="c2-rank c2-rank-2">2</div>
+          <div><p class="c2-acard-name">INGEOTRANS Soluciones Integrales de Transporte</p><div class="c2-acard-sub">España (Las Rozas, Madrid) · <span class="c2b c2b-alto">Potencial ALTO</span></div></div>
+        </div>
+        <div class="c2-acard-body">
+          <div class="c2-arow"><span class="c2-arow-lbl">Presencia LAC:</span><span class="c2-arow-val">Rep. Dominicana, Panamá, Ecuador, Colombia</span></div>
+          <div class="c2-arow"><span class="c2-arow-lbl">Por qué #2:</span><span class="c2-arow-val">Shadow operator de OPRET durante 15 años (2006-2021). Conoce los directivos actuales de OPRET y la estructura de costos del propio Metro de Medellín. Aval Banco Mundial.</span></div>
+          <div class="c2-arow"><span class="c2-arow-lbl">Track record:</span><span class="c2-arow-val">OPRET Metro SD (shadow op. 2006-2021) · MetroCable Medellín K/J/L (2007-2018) · BM Bogotá auditoría</span></div>
+        </div>
+        <div class="c2-acard-action"><strong>► Primera acción:</strong> Reunión directa INGEOTRANS Madrid — consorcio para licitación consultoría SIT Santo Domingo (integración OPRET+OMSA).</div>
+      </div>
+
+      <div class="c2-acard">
+        <div class="c2-acard-top">
+          <div class="c2-rank c2-rank-3">3</div>
+          <div><p class="c2-acard-name">SOFRATESA GROUP</p><div class="c2-acard-sub">Francia (oficinas en SD y Panamá) · <span class="c2b c2b-medio-alto">Potencial MEDIO-ALTO</span></div></div>
+        </div>
+        <div class="c2-acard-body">
+          <div class="c2-arow"><span class="c2-arow-lbl">Presencia LAC:</span><span class="c2-arow-val">RD, Panamá, Ecuador, Colombia, Argentina, Chile, México</span></div>
+          <div class="c2-arow"><span class="c2-arow-lbl">Por qué #3:</span><span class="c2-arow-val">11 años manejando el recaudo de Metro SD. Personal permanente en terreno en los mercados Caribe y Centroamérica donde Metro de Medellín quiere entrar.</span></div>
+          <div class="c2-arow"><span class="c2-arow-lbl">Track record:</span><span class="c2-arow-val">Recaudo Metro SD (11 años) · Bombeo L1 Metro Panamá · Aerovía Guayaquil</span></div>
+        </div>
+        <div class="c2-acard-action"><strong>► Primera acción:</strong> Identificar interlocutor en oficina Santo Domingo — consorcio para renovación sistema recaudo OPRET en marco del SIT.</div>
+      </div>
+
+      <div class="c2-acard">
+        <div class="c2-acard-top">
+          <div class="c2-rank c2-rank-4">4</div>
+          <div><p class="c2-acard-name">MASABI</p><div class="c2-acard-sub">Reino Unido (ingeniería en Colombia) · <span class="c2b c2b-medio">Potencial MEDIO</span></div></div>
+        </div>
+        <div class="c2-acard-body">
+          <div class="c2-arow"><span class="c2-arow-lbl">Por qué #4:</span><span class="c2-arow-val">Plataforma Justride FPaaS: ABT + cEMV + BYOT. Ahorro 42-73% vs. hardware propietario. Ingeniería en Colombia. Para licitaciones modernización tarifaria SIT en LAC.</span></div>
+          <div class="c2-arow"><span class="c2-arow-lbl">Track record:</span><span class="c2-arow-val">Metrolink LA · MBTA Boston · RTD Denver · EMT Valencia · En LAC vía Ibergex (México)</span></div>
+        </div>
+        <div class="c2-acard-action"><strong>► Primera acción:</strong> Contactar Ibergex (distribuidor México). Evaluar demo Justride integrado con sistema Cívica de Medellín.</div>
+      </div>
+
+      <div class="c2-acard">
+        <div class="c2-acard-top">
+          <div class="c2-rank c2-rank-n">5</div>
+          <div><p class="c2-acard-name">FGC Mobilitat S.A.U.</p><div class="c2-acard-sub">España · <span class="c2b c2b-medio">Potencial MEDIO</span></div></div>
+        </div>
+        <div class="c2-acard-body">
+          <div class="c2-arow"><span class="c2-arow-lbl">Por qué #5:</span><span class="c2-arow-val">Track record directo con Metro de Medellín (señalización 2019). Estructura SAU resuelve 80/20. Ecosistema Ardanuy. Para terceros países (Perú, México) como aliado de ingeniería ferroviaria.</span></div>
+        </div>
+        <div class="c2-acard-action"><strong>► Primera acción:</strong> Proponer acuerdo marco alianza estratégica para licitaciones LAC en terceros países.</div>
+      </div>
+
+    </div>
+
+    <div class="c2-section-title"><div class="c2dot"></div>Actores a monitorear — No actuar aún</div>
+    <div class="c2-table-box">
+      <table>
+        <thead><tr><th>Actor</th><th>Razón para monitorear</th><th>Cuándo actuar</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CPTM / CPTM Serviços</strong></td><td>Competidor emergente en LAC. También potencial aliado en cercanías/commuter rail.</td><td>Cuando publique nuevos contratos LAC fuera de Brasil</td></tr>
+          <tr><td><strong>SGS / TÜV Rheinland</strong></td><td>Subcontratados para elevar propuesta técnica (ISO 55001, certificación operabilidad)</td><td>Antes de presentar propuestas formales a concedentes BID/CAF</td></tr>
+          <tr><td><strong>Renfe Proyectos Internacionales</strong></td><td>Shadow operator Tren Maya (México). Podría competir si resuelve restricción 80/20 vía SME S.A.</td><td>Si se anuncia licitación ferroviaria en México o Brasil</td></tr>
+          <tr><td><strong>REMED S.A. / Guatemala</strong></td><td>Tóxico hoy. Si se sanea hay una red ferroviaria real bajo marco APP multilateral.</td><td>Post-resolución litigio constitucional y penal (2027+)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  </div>
+
+  <div class="c2-footer">
+    Capa 2 — Inteligencia Comercial ALAMYS · Metro de Medellín GDN · Junio 2026 · CONFIDENCIAL<br>
+    Basado en investigación Gemini Pro Deep Research (5 búsquedas, junio 2026) · Fuentes: portales oficiales, gacetas, memorias anuales, prensa especializada
   </div>
 
 </div>
